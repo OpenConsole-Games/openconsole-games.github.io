@@ -1,0 +1,15 @@
+{
+"maxPlayers": 2,
+"controls": [
+    {
+    "b":	  { "innerHTML":"A", "isKeyboard":true, "data":[65, "a", "KeyA"] }
+    },
+    {
+    "b":	  { "innerHTML":"L", "isKeyboard":true, "data":[76, "l", "KeyL"] }
+    }],
+"aspect": "1.7777777",
+"relLocation": "index.html",
+"loadUnityGame": false,
+"canvasID": "c2canvas",
+"controllerLocation": "https://openconsole.github.io/Controllers/two_button/two_button.html"
+}

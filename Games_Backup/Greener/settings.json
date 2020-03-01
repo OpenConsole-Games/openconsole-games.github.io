@@ -1,0 +1,20 @@
+{
+"maxPlayers": 2,
+"controls": [
+    {
+    "a":     { "innerHTML":"A", "isKeyboard":true, "data":[65, "a", "KeyA"] },
+    "b":     { "innerHTML":"D", "isKeyboard":true, "data":[68, "d", "KeyD"] },
+    "Escape": { "innerHTML":"R", "isKeyboard":true, "data":[82, "r", "KeyR"] },
+    "Start":  { "innerHTML":"Space", "isKeyboard":true, "data":[32, " ", "Space"] }
+    },
+    {
+    "a":     { "innerHTML":"L", "isKeyboard":true, "data":[76, "l", "KeyL"] },
+    "b":     { "innerHTML":"J", "isKeyboard":true, "data":[74, "j", "KeyJ"] },
+    "Escape": { "innerHTML":"R", "isKeyboard":true, "data":[82, "r", "KeyR"] },
+    "Start":  { "innerHTML":"Space", "isKeyboard":true, "data":[32, " ", "Space"] }
+    }],
+"aspect": 1.333333333,
+"relLocation": "GreenerWebGL.json",
+"loadUnityGame": true,
+"controllerLocation": "https://openconsole.github.io/Controllers/two_button/two_button.html"
+}

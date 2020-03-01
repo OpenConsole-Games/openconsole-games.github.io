@@ -1,0 +1,22 @@
+[
+{ "name":"_ChooseGame", "relLocation":"ChooseGame/settings.json" },
+{ "name":"#HardCrash", "relLocation":"HardCrash/settings.json", "minPayers":1, "maxPlayers":4, "gamePic":"https://img.itch.zone/aW1hZ2UvMTMzOTY4LzYxODc5OC5naWY=/315x250%23cm/L4tXJ%2B.gif", "highlightPic":"https://img.itch.zone/aW1hZ2UvMTMzOTY4LzYxODc5OC5naWY=/original/fU4eEp.gif" },
+{ "name":"_League Of Pixels", "relLocation":"LeagueOfPixels/settings.json" },
+{ "name":"G-Switch 3", "relLocation":"G-Switch_3/settings.json", "minPayers":1, "maxPlayers":8, "gamePic":"https://www.crazyschoolgames.com/web/uploads/games/swf/g-switch-3/g-switch-3_big.jpg" },
+{ "name":"Two Ball", "relLocation":"TwoBall3D/settings.json", "minPayers":1, "maxPlayers":2, "gamePic":"https://images.twoplayergames.org/files/games/other/TwoBall3D/TwoBall3D.jpg?auto=format&w=80" },
+{ "name":"Snow World", "relLocation":"SnowWorld/settings.json", "minPayers":1, "maxPlayers":2, "gamePic":"https://img.itch.zone/aW1nLzE3NTcxNzcuZ2lm/315x250%23cm/hjjzfd.gif", "highlightPic":"https://img.itch.zone/aW1nLzE3NTcxNzcuZ2lm/original/kk9Cbb.gif" },
+{ "name":"Snowball Showdown", "relLocation":"SnowballShowdown/settings.json", "minPayers":1, "maxPlayers":2, "gamePic":"https://img.itch.zone/aW1nLzE3MzY0MDMucG5n/315x250%23c/fruprU.png" },
+{ "name":"Crystal Control", "relLocation":"CrystalControl/settings.json", "minPayers":2, "gamePic":"", "gamePic":"https://img.itch.zone/aW1hZ2UvMTI5NjgvMjMxNDc0LmdpZg==/315x250%23cm/KQG9Fu.gif", "highlightPic":"https://img.itch.zone/aW1hZ2UvMTI5NjgvMjMxNDc0LmdpZg==/original/4gCCSB.gif" },
+{ "name":"Toaster Ball", "relLocation":"ToasterBall/settings.json", "minPayers":2, "gamePic":"https://img.itch.zone/aW1hZ2UvMjc2Nzk4LzEzNDIyMDMuZ2lm/315x250%23cm/gEcCOD.gif", "highlightPic":"https://img.itch.zone/aW1hZ2UvMjc2Nzk4LzEzNDIyMDMuZ2lm/original/Qp6jXj.gif" },
+{ "name":"OBN Golf", "relLocation":"OBNGolf/settings.json", "minPayers":1, "maxPlayers":6, "gamePic":"https://img.itch.zone/aW1hZ2UvOTgxMzgvNDc2NTgzLmdpZg==/315x250%23cm/FYt0qL.gif", "highlightPic":"https://img.itch.zone/aW1hZ2UvOTgxMzgvNDc2NTgzLmdpZg==/original/pcW1M6.gif" },
+{ "name":"Viper League", "relLocation":"ViperLeague/settings.json", "minPayers":1, "maxPlayers":4, "gamePic":"https://img.itch.zone/aW1hZ2UvNTc4NjUvMjYwNDgzLnBuZw==/315x250%23c/1Xvclh.png" },
+{ "name":"Pium Pium", "relLocation":"PiumPium/settings.json", "minPayers":2, "maxPlayers":45, "gamePic":"https://img.itch.zone/aW1hZ2UvMjU5NDg1LzEyNDUxOTkucG5n/315x250%23c/lU1ZmA.png" },
+{ "name":"#Art", "relLocation":"Art/settings.json", "minPayers":2, "maxPlayers":18, "gamePic":"https://img.itch.zone/aW1hZ2UvMjQzMDUwLzExNjAwOTcucG5n/315x250%23c/Mbl7Rn.png" },
+{ "name":"Dikdik", "relLocation":"DikDik/settings.json", "minPayers":2, "gamePic":"https://img.itch.zone/aW1hZ2UvMTI5NjcvNDI3MzYucG5n/315x250%23c/Lio6RU.png" },
+{ "name":"Greener", "relLocation":"Greener/settings.json", "minPayers":2, "gamePic":"https://img.itch.zone/aW1nLzI2NjgwOTUucG5n/315x250%23c/mBgl%2BO.png" },
+{ "name":"Metallurgy", "relLocation":"HyperspaceMetallurgy/settings.json", "minPayers":2, "gamePic":"https://img.itch.zone/aW1nLzI5NDMyOTAucG5n/315x250%23c/%2FT5ctZ.png" },
+{ "name":"Rusty Submarine", "relLocation":"MyRustySubmarine/settings.json", "minPayers":2, "gamePic":"https://img.itch.zone/aW1nLzI5NDk3NzAucG5n/315x250%23c/LPrkFh.png", "highlightPic":"https://img.itch.zone/aW1hZ2UvNTYyMTQ3LzI5NTExMjAuZ2lm/210x105%23/jQV30v.gif" },
+{ "name":"Titonic Fisherman", "relLocation":"TitonicFisherman/settings.json", "minPayers":1, "maxPlayers":8, "gamePic":"https://img.itch.zone/aW1hZ2UvMjQ0NDcxLzExOTA3MDUucG5n/315x250%23c/kkF6HP.png" },
+{ "name":"One Button Duel", "relLocation":"OneButtonDuel/settings.json", "minPayers":2, "gamePic":"https://img.itch.zone/aW1hZ2UvNzk0NjAvMzczNTU1LmdpZg==/315x250%23cm/5HdOpI.gif", "highlightPic":"https://img.itch.zone/aW1hZ2UvNzk0NjAvMzczNTU1LmdpZg==/original/MjjG59.gif" },
+{ "name":"Partypillars", "relLocation":"Partypillars/settings.json", "minPayers":2, "maxPlayers":4, "gamePic":"https://img.itch.zone/aW1hZ2UvOTM3OS81MDExMC5wbmc=/315x250%23c/EryOR5.png" }
+]

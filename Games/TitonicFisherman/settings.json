@@ -1,0 +1,37 @@
+{
+"maxPlayers": 8,
+"controls": [
+  {
+    "a":     { "innerHTML":"Q", "isKeyboard":true, "data":[81, "Q", "KeyQ"] },
+    "b":     { "innerHTML":"W", "isKeyboard":true, "data":[87, "W", "KeyW"] },
+    "Start": { "innerHTML":"Clear", "isKeyboard":true, "data":[90, "Z", "KeyZ"] },
+    "Escape":{ "innerHTML":"Switch Mode", "isKeyboard":true, "data":[88, "X", "KeyX"] }
+  },{
+    "a":    { "innerHTML":"E", "isKeyboard":true, "data":[69, "E", "KeyE"] },
+    "b":    { "innerHTML":"R", "isKeyboard":true, "data":[82, "R", "KeyR"] }  
+  },{
+    "a":    { "innerHTML":"T", "isKeyboard":true, "data":[84, "T", "KeyT"] },
+    "b":    { "innerHTML":"Y", "isKeyboard":true, "data":[89, "Y", "KeyY"] }
+  },{
+    "a":    { "innerHTML":"U", "isKeyboard":true, "data":[85, "U", "KeyU"] },
+    "b":    { "innerHTML":"I", "isKeyboard":true, "data":[73, "I", "KeyI"] }
+  },{
+    "a":    { "innerHTML":"O", "isKeyboard":true, "data":[79, "O", "KeyO"] },
+    "b":    { "innerHTML":"P", "isKeyboard":true, "data":[80, "P", "KeyP"] }
+  },{
+    "a":    { "innerHTML":"A", "isKeyboard":true, "data":[65, "A", "KeyA"] },
+    "b":    { "innerHTML":"S", "isKeyboard":true, "data":[83, "S", "KeyS"] }
+  },{
+    "a":    { "innerHTML":"D", "isKeyboard":true, "data":[68, "D", "KeyD"] },
+    "b":    { "innerHTML":"F", "isKeyboard":true, "data":[70, "F", "KeyF"] }
+  },{
+    "a":    { "innerHTML":"G", "isKeyboard":true, "data":[71, "G", "KeyG"] },
+    "b":    { "innerHTML":"H", "isKeyboard":true, "data":[72, "H", "KeyH"] }
+  }
+  ],
+"aspect": "1.777777777",
+"relLocation": "index.html",
+"loadUnityGame": false,
+"canvasID": "canvas",
+"controllerLocation": "https://openconsole.github.io/Controllers/two_button/two_button.html"
+}

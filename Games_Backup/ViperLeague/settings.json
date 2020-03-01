@@ -1,0 +1,30 @@
+{
+"maxPlayers": 4,
+"controls": [
+    {
+    "a":    { "innerHTML":"A", "isKeyboard":true, "data":[65, "s", "KeyA"] },
+    "b":    { "innerHTML":"D", "isKeyboard":true, "data":[68, "f", "KeyD"] },
+    "Start":{ "innerHTML":"S", "isKeyboard":true, "data":[83, "d", "KeyS"] }
+    },
+    {
+    "a":    { "innerHTML":"←", "isKeyboard":true, "data":[37, "ArrowLeft", "ArrowLeft"] },
+    "b":    { "innerHTML":"→", "isKeyboard":true, "data":[39, "ArrowRight", "ArrowRight"] },
+    "Start":{ "innerHTML":"↓", "isKeyboard":true, "data":[40, "ArrowDown", "ArrowDown"] }
+    },
+    {
+    "a":    { "innerHTML":"J", "isKeyboard":true, "data":[74, "s", "KeyJ"] },
+    "b":    { "innerHTML":"L", "isKeyboard":true, "data":[76, "f", "KeyL"] },
+    "Start":{ "innerHTML":"K", "isKeyboard":true, "data":[75, "d", "KeyK"] }
+    },
+    {
+    "a":    { "innerHTML":"4", "isKeyboard":true, "data":[100, "4", "Numpad4"] },
+    "b":    { "innerHTML":"6", "isKeyboard":true, "data":[101, "6", "Numpad6"] },
+    "Start":{ "innerHTML":"5", "isKeyboard":true, "data":[102, "5", "Numpad5"] }
+    }
+    ],
+"aspect": "1.90476",
+"relLocation": "index.html",
+"loadUnityGame": false,
+"canvasID": "GameCanvas",
+"controllerLocation": "https://openconsole.github.io/Controllers/two_button/two_button.html"
+}

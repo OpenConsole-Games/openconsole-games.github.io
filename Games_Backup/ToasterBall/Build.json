@@ -1,0 +1,13 @@
+{
+"companyName": "Couch Game Crafters",
+"productName": "Toasterball",
+"dataUrl": "Build.data.unityweb",
+"asmCodeUrl": "Build.asm.code.unityweb",
+"asmMemoryUrl": "Build.asm.memory.unityweb",
+"asmFrameworkUrl": "Build.asm.framework.unityweb",
+"TOTAL_MEMORY": 1073741824,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#421B92"
+}

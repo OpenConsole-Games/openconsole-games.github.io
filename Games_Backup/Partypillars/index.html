@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Partypillars</title>
+	<style type="text/css">
+		html,body {
+			background-color: #333;
+			color: #fff;
+			font-family: helvetica, arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			font-size: 12pt;
+		}
+
+		#wrapper {
+		}
+		
+		#canvas {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+      height: 100vh;
+      width: 133.3333vh;
+			max-height: 75vw;
+			max-width: 100vw;
+			
+			margin: auto;
+		}
+		#fullscreen {
+			position: absolute;
+			top: 220px;
+			left: 300px;
+			width: 28px;
+			height: 28px;
+			margin: 0;
+			z-index: 2;	
+		}
+
+		#tooltipimg {
+			top: 220px;
+			left: 300px;
+		}
+
+		#input[type=image]:hover,
+		#input[type=image]:active,
+		#input[type=image]:focus {
+		    background-image: url('media/fullscreenbutton_hover');
+		}​
+
+		#canvas:full-screen
+		{
+			width: 80%;
+		}
+		#canvas:full-screen img
+		{
+			width: 80%;
+		}
+		#canvas:-webkit-full-screen	{ width: 80% }
+		#canvas:-moz-full-screen { width: 80% }
+		#canvas:-ms-full-screen		{ width: 80% }
+		#canvas:-o-full-screen		{ width: 80% }
+		#canvas:full-screen			{ width: 80% }
+
+		#gofullscreen
+		{
+
+		}
+
+		#tooltip
+		{
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			width: 28px;
+			height: 28px;
+			margin: auto;
+			z-index: 2;
+		}
+		 
+		#tooltip span
+		{
+			display:none;
+			-moz-border-radius:0px;
+			-webkit-border-radius:0px;
+			position: absolute;
+			margin: 0;
+		}
+		 
+		#tooltip span img
+		{
+			display: inline;
+			position: relative;
+			margin:0px 0px 0px 0;
+		}
+		 
+		#tooltip:hover span
+		{
+		  display:block;
+		  position:relative;
+		  z-index:1000;
+		  right: 70px;
+		  bottom: 16px;
+		  width:auto;
+		  margin-top:0px;
+		  margin-left:0px;
+		  padding:0px;
+		}
+	</style>
+	
+	<script type="text/javascript" src="TweenMax.js"></script>
+	<script type="text/javascript" src="TweenMax.js"></script>
+	<script type="text/javascript" src="game.min.js"></script><!--
+	<script type="text/javascript" src="lib/impact/impact.js"></script>
+	<script type="text/javascript" src="lib/game/main.js"></script>
+	
+	
+	<script type="text/javascript">
+	-->	
+	<!--
+	/*
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-31917881-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	  	*/
+	</script>-->
+
+</head>
+<body>
+	<div id="wrapper">
+	<div id="tooltip">
+	</div>
+	<span class="overlay"></span>
+	<canvas id="canvas"></canvas>
+	<!--!-->
+	</div>
+	
+	
+	<!--<button id="fullscreen" type="button">Go fullscreen!</button>!-->
+</body>
+<script>
+	var pfx = ["webkit", "moz", "ms", "o", ""];
+	function changeHandler(){
+		if(isFullScreen()){
+			MakeMeBig();
+		} else {
+			MakeMeSmall();
+		}
+	}
+	browserPrefixes = 'webkit moz o ms khtml'.split(' ');
+	prefix = '';
+	for (var i = 0, il = browserPrefixes.length; i < il; i++ ) {
+		prefix = browserPrefixes[i];
+		if (typeof document[prefix + 'CancelFullScreen' ] != 'undefined' ) {
+			break;
+		}
+	}
+	isFullScreen = function() {
+		switch (prefix) {	
+			case '':
+				return document.fullScreen;
+			case 'webkit':
+				return document.webkitIsFullScreen;
+			default:
+				return document[this.prefix + 'FullScreen'];
+		}
+	}
+
+	function MakeMeBig(){
+		var canvas = document.getElementById("canvas");
+		canvas.style.width = "75%";
+		var fullscreen = document.getElementById("fullscreen");
+		fullscreen.style.visibility = 'hidden';
+	}
+	function MakeMeSmall(){
+		var canvas = document.getElementById("canvas");
+		canvas.style.width = "";
+		var fullscreen = document.getElementById("fullscreen");
+		fullscreen.style.visibility = 'visible';
+	}
+	function RunPrefixMethod(obj, method) {
+		var p = 0, m, t;
+		while (p < pfx.length && !obj[m]) {
+			m = method;
+			if (pfx[p] == "") {
+				m = m.substr(0,1).toLowerCase() + m.substr(1);
+			}
+			m = pfx[p] + m;
+			t = typeof obj[m];
+			if (t != "undefined") {
+				pfx = [pfx[p]];
+				return (t == "function" ? obj[m](obj.ALLOW_KEYBOARD_INPUT) : obj[m]);
+			}
+			p++;
+		}
+	}
+	
+	var fullscreen = document.getElementById('fullscreen');
+	input = fullscreen;
+	input.onmouseover = function(){
+	    this.setAttribute('data-orig-image',this.getAttribute('src'));
+	    this.src = this.getAttribute('data-alt-image');
+	};
+	input.onmouseout = function(){
+	    this.src = this.getAttribute('data-orig-image');
+	};
+
+	var e = document.getElementById("wrapper");
+	var f = document.getElementById("fullscreen");
+	var normalsize = document.getElementById("normalsize");
+	document.addEventListener("fullscreenchange", changeHandler, false);
+	document.addEventListener("webkitfullscreenchange", changeHandler, false);
+   	document.addEventListener("mozfullscreenchange", changeHandler, false);
+	f.onclick = function() {
+		if (RunPrefixMethod(document, "FullScreen") || RunPrefixMethod(document, "IsFullScreen")) {
+			RunPrefixMethod(document, "CancelFullScreen");
+
+		}
+		else {
+			RunPrefixMethod(e, "RequestFullScreen");
+		}
+	}
+
+	</script>
+</html>
