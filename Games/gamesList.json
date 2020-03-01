@@ -1,4 +1,5 @@
 [
+{ "name":"_ChooseGame", "relLocation":"ChooseGame/settings.json" },
 { "name":"#HardCrash", "relLocation":"HardCrash/settings.json", "minPayers":1, "maxPlayers":4, "gamePic":"https://img.itch.zone/aW1hZ2UvMTMzOTY4LzYxODc5OC5naWY=/315x250%23cm/L4tXJ%2B.gif", "highlightPic":"https://img.itch.zone/aW1hZ2UvMTMzOTY4LzYxODc5OC5naWY=/original/fU4eEp.gif" },
 { "name":"_Maze Game", "relLocation":"MazeGame/settings.json" },
 { "name":"_League Of Pixels", "relLocation":"LeagueOfPixels/settings.json" },
