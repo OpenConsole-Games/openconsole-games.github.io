@@ -59,7 +59,7 @@ body {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100%;
-  background-color: #396385;
+  background-color: #2e506b;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -69,6 +69,7 @@ body {
 }
 .game-image.active {
 	opacity: 1;
+  background-color: #396385;
 }
 .game-footer {
   display:flex;
