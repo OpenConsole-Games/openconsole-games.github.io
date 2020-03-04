@@ -34,9 +34,11 @@ var setGames = function (gamesList, prevGame) {
 	    gameSelect.appendChild(gameImage);
       var gameImageGif = document.createElement("div");
 	    gameImageGif.classList.add("game-image");
+      var highlightPicStyle = 'background-image: linear-gradient( #0000, #0000, #39638577 )';
 	    if (currGame.highlightPic) {
-	      gameImageGif.setAttribute('style', 'background-image: url(\'' + currGame.highlightPic + '\');')
+	      highlightPicStyle += ', url(\'' + currGame.highlightPic + '\')')
 	    }
+      gameImageGif.setAttribute('style', highlightPicStyle);
       gameSelect.gameGifElem = gameImageGif;
 	    gameImage.appendChild(gameImageGif);
 	  
