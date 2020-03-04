@@ -36,7 +36,7 @@ var setGames = function (gamesList, prevGame) {
 	    gameImageGif.classList.add("game-image");
       var highlightPicStyle = 'background-image: linear-gradient( #0000, #0000, #39638577 )';
 	    if (currGame.highlightPic) {
-	      highlightPicStyle += ', url(\'' + currGame.highlightPic + '\')')
+	      highlightPicStyle += ', url(\'' + currGame.highlightPic + '\')';
 	    }
       gameImageGif.setAttribute('style', highlightPicStyle);
       gameSelect.gameGifElem = gameImageGif;
