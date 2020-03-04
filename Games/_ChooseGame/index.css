@@ -88,7 +88,6 @@ body {
   margin: 0 0.6vw;
 	white-space: nowrap;
   text-overflow: ellipsis;
-  color: #2e506b;
   opacity: 0;
   transition: opacity 0.4s;
 }
