@@ -1,15 +1,15 @@
 {
-"maxPlayers": 2,
-"controls": [
+"game":   { "relLoc": "index.html", "type":"cached" },
+"canvas": { "aspect": "1.7777777777", "id": "c2canvas" },
+"ctrl":   { "loc": "https://openconsole.github.io/Controllers/two_button/two_button.html" },
+"controls": {
+  "maxPlayers": 2,
+  "keymap": [
     {
-    "b":	  { "innerHTML":"A", "isKeyboard":true, "data":[65, "a", "KeyA"] }
-    },
-    {
-    "b":	  { "innerHTML":"L", "isKeyboard":true, "data":[76, "l", "KeyL"] }
-    }],
-"aspect": "1.7777777",
-"relLocation": "index.html",
-"loadUnityGame": false,
-"canvasID": "c2canvas",
-"controllerLocation": "https://openconsole.github.io/Controllers/two_button/two_button.html"
+      "b":	  { "innerHTML":"A", "isKeyboard":true, "data":[65, "a", "KeyA"] }
+    },{
+      "b":	  { "innerHTML":"L", "isKeyboard":true, "data":[76, "l", "KeyL"] }
+    }
+  ]
+}
 }
