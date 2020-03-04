@@ -53,21 +53,31 @@ body {
 	border-color: #1b2f40;
 	z-index: 1;
 }
-.game-image {
-	width: 100%;
-	height: 100%;
+.game-image, .game-gif {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100%;
-  opacity: 0;
-  transition: opacity 0.5s;
 }
-.game-image.static {
+.game-image {
 	width: 97%;
 	height: 97%;
 }
-.game-image.active {
-	opacity: 1;
+.game-gif {
+	width: 100%;
+	height: 100%;
+	background-color: #1b2f40;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.game-author-image-fade {
+	width: 100%;
+	height: 100%;
+  background-image: linear-gradient(-20deg, #0000, #0000, #2e506b99 );
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.game-gif.active, .game-author-image-fade.active {
+  opacity: 1;
 }
 .game-footer {
   display:flex;

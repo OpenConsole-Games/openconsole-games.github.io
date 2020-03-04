@@ -27,7 +27,7 @@ var setGames = function (gamesList, prevGame) {
 	    gamesArray[y].push([currGame, gameSelect]);
 	  
 	    var gameImage = document.createElement("div");
-	    gameImage.classList.add("game-image", "static", "active");
+	    gameImage.classList.add("game-image", "active");
 	    if (currGame.gamePic) {
 	      gameImage.setAttribute('style', 'background-image: url(\'' + currGame.gamePic + '\');')
 	    }
@@ -35,22 +35,17 @@ var setGames = function (gamesList, prevGame) {
       gameSelect.gamePicElem = gameImage;
 
       var gameImageGif = document.createElement("div");
-	    gameImageGif.classList.add("game-image");
-      var highlightPicStyle = 'background-image: ';
-      if (currGame.author != null && currGame.highlightPic != null) {
-        highlightPicStyle += 'linear-gradient(-20deg, #0000, #0000, #2e506b99 ), url(\'' + currGame.highlightPic + '\');';
+	    gameImageGif.classList.add("game-gif");
+      if (currGame.highlightPic != null) {
+        gameImageGif.setAttribute('style', 'background-image: url(\'' + currGame.highlightPic + '\');');
       }
-      else if (currGame.author != null) {
-        highlightPicStyle += 'linear-gradient(-20deg, #0000, #0000, #2e506b99 );';
-      }
-      else if (currGame.highlightPic != null) {
-        highlightPicStyle += 'url(\'' + currGame.highlightPic + '\');';
-      }
-      if (highlightPicStyle != 'background-image: ') {
-        gameImageGif.setAttribute('style', highlightPicStyle);
-	    }
 	    gameImage.appendChild(gameImageGif);
       gameSelect.gameGifElem = gameImageGif;
+
+      var gameImageAuthorFade = document.createElement("div");
+	    gameImageAuthorFade.classList.add("game-author-image-fade");
+	    gameImageGif.appendChild(gameImageAuthorFade);
+      gameSelect.gameAuthorFadeElem = gameImageAuthorFade;
 	  
 	    var gameFooter = document.createElement("div");
 	    gameFooter.classList.add("game-footer");
@@ -94,7 +89,10 @@ var setGames = function (gamesList, prevGame) {
 
 function setGameActive(x, y) {
   gamesArray[y][x][1].classList.add("active");
-  gamesArray[y][x][1].authorElem.classList.add("active");
+  if(gamesArray[y][x][0].author) {
+    gamesArray[y][x][1].gameAuthorFadeElem.classList.add("active");
+    gamesArray[y][x][1].authorElem.classList.add("active");
+  }
   gamesArray[y][x][1].gameGifElem.classList.add("active");
   if (gamesArray[y][x][0].highlightPic) {
     gamesArray[y][x][1].gamePicElem.classList.remove("active");
@@ -102,7 +100,10 @@ function setGameActive(x, y) {
 }
 function setGameInactive(x, y) {
   gamesArray[y][x][1].classList.remove("active");
-  gamesArray[y][x][1].authorElem.classList.remove("active");
+  if(gamesArray[y][x][0].author) {
+    gamesArray[y][x][1].gameAuthorFadeElem.classList.remove("active");
+    gamesArray[y][x][1].authorElem.classList.remove("active");
+  }
   gamesArray[y][x][1].gameGifElem.classList.remove("active");
   if (gamesArray[y][x][0].highlightPic) {
     gamesArray[y][x][1].gamePicElem.classList.add("active");
