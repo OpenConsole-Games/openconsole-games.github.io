@@ -32,6 +32,8 @@ var setGames = function (gamesList, prevGame) {
 	      gameImage.setAttribute('style', 'background-image: url(\'' + currGame.gamePic + '\');')
 	    }
 	    gameSelect.appendChild(gameImage);
+      gameSelect.gamePicElem = gameImage;
+
       var gameImageGif = document.createElement("div");
 	    gameImageGif.classList.add("game-image");
       var highlightPicStyle = 'background-image:';
@@ -89,11 +91,17 @@ function setGameActive(x, y) {
   gamesArray[y][x][1].classList.add("active");
   gamesArray[y][x][1].authorElem.classList.add("active");
   gamesArray[y][x][1].gameGifElem.classList.add("active");
+  if (gamesArray[y][x][0].highlightPic) {
+    gamesArray[y][x][1].gamePicElem.remove("active");
+  }
 }
 function setGameInactive(x, y) {
   gamesArray[y][x][1].classList.remove("active");
   gamesArray[y][x][1].authorElem.classList.remove("active");
   gamesArray[y][x][1].gameGifElem.classList.remove("active");
+  if (gamesArray[y][x][0].highlightPic) {
+    gamesArray[y][x][1].gamePicElem.add("active");
+  }
 }
 function randomSelect() {
   var rY = Math.floor(Math.random() * gamesArray.length);
