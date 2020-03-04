@@ -19,6 +19,6 @@
 { "name":"Rusty Submarine", "author":"Sørb", "relLocation":"UnityGames/myrustysubmarine.json", "minPayers":2, "gamePic":"https://img.itch.zone/aW1nLzI5NDk3NzAucG5n/315x250%23c/LPrkFh.png", "highlightPic":"https://img.itch.zone/aW1hZ2UvNTYyMTQ3LzI5NTExMjAuZ2lm/210x105%23/jQV30v.gif" },
 { "name":"Titonic Fisherman", "author":"Froach Club", "relLocation":"TitonicFisherman/settings.json", "minPayers":1, "maxPlayers":8, "gamePic":"https://img.itch.zone/aW1hZ2UvMjQ0NDcxLzExOTA3MDUucG5n/315x250%23c/kkF6HP.png" },
 { "name":"One Button Duel", "author":"Sean", "relLocation":"OneButtonDuel/settings.json", "minPayers":2, "gamePic":"https://img.itch.zone/aW1hZ2UvNzk0NjAvMzczNTU1LmdpZg==/315x250%23cm/5HdOpI.gif", "highlightPic":"https://img.itch.zone/aW1hZ2UvNzk0NjAvMzczNTU1LmdpZg==/original/MjjG59.gif" },
-{ "name":"Partypillars", "author":"Krisjet", "relLocation":"Partypillars/settings.json", "minPayers":2, "maxPlayers":4, "gamePic":"https://img.itch.zone/aW1hZ2UvOTM3OS81MDExMC5wbmc=/315x250%23c/EryOR5.png" }
+{ "name":"Partypillars", "author":"Krisjet", "relLocation":"Partypillars/settings.json", "minPayers":2, "maxPlayers":4, "gamePic":"https://img.itch.zone/aW1hZ2UvOTM3OS81MDExMC5wbmc=/315x250%23c/EryOR5.png" },
 { "name":"bitbout", "author":"Benji Kay", "relLocation":"RemoteGames/bitbout.json", "minPayers":2, "maxPlayers":4, "gamePic":"https://img.itch.zone/aW1hZ2UvNTk4ODcvMjg4Nzg5LmdpZg==/315x250%23cm/9dYppN.gif", "highlightPic":"https://img.itch.zone/aW1hZ2UvNTk4ODcvMjg4Nzg5LmdpZg==/original/m9kwOZ.gif" }
 ]
