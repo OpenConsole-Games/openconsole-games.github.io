@@ -34,9 +34,12 @@ var setGames = function (gamesList, prevGame) {
 	    gameSelect.appendChild(gameImage);
       var gameImageGif = document.createElement("div");
 	    gameImageGif.classList.add("game-image");
-      var highlightPicStyle = 'background-image: linear-gradient(-20deg, #0000, #0000, #2e506b99 )';
-	    if (currGame.highlightPic) {
-	      highlightPicStyle += ', url(\'' + currGame.highlightPic + '\')';
+      var highlightPicStyle = 'background-image:';
+      if (currGame.author) {
+        highlightPicStyle += 'linear-gradient(-20deg, #0000, #0000, #2e506b99 ),';
+	    }
+      if (currGame.highlightPic) {
+	      highlightPicStyle += 'url(\'' + currGame.highlightPic + '\')';
 	    }
       gameImageGif.setAttribute('style', highlightPicStyle);
 	    gameImage.appendChild(gameImageGif);
