@@ -49,7 +49,7 @@ GameLoad.prototype.iframeCanvasSize = function () {
   else
     gLoad.canvasElems = [gLoad.gameIFrame.contentWindow.document.getElementById(gLoad.canvasId)];
   
-  if (canvasElems.length == 0) {
+  if (gLoad.canvasElems.length == 0) {
     setTimeout(gLoad.iframeCanvasSize, 1000);
     return;
   }
