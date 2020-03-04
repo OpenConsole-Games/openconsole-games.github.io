@@ -41,7 +41,7 @@ body {
 	background-color: #2e506b;
 	display: flex;
 	flex-direction: column;
-  transition: width 0.3s, height 0.3s, transform 0.3s;
+  transition: width 0.2s, height 0.2s, transform 0.2s, z-index 0.2s;
 }
 .game-select.active {
 	width: 16vw;
@@ -49,7 +49,7 @@ body {
 	transform: translate(-1vw, -1vw);
 	background-color: #396385;
 	border-color: #1b2f40;
-	z-index:1;
+	z-index: 1;
 }
 .game-image {
 	width: 100%;

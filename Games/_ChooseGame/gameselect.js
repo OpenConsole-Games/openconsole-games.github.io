@@ -46,6 +46,7 @@ var setGames = function (gamesList, prevGame) {
       var gameName = document.createElement("div");
 	    gameName.classList.add("game-name");
 	    gameName.innerHTML = currGame.name;
+	    gameFooter.appendChild(gameName);
       var authorName = document.createElement("div");
 	    authorName.classList.add("author-name");
 	    authorName.innerHTML = currGame.author;
