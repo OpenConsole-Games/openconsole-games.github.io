@@ -27,20 +27,20 @@ var setGames = function (gamesList, prevGame) {
 	    gamesArray[y].push([currGame, gameSelect]);
 	  
 	    var gameImage = document.createElement("div");
-	    gameImage.classList.add("game-image", "active");
+	    gameImage.classList.add("game-image", "static", "active");
 	    if (currGame.gamePic) {
 	      gameImage.setAttribute('style', 'background-image: url(\'' + currGame.gamePic + '\');')
 	    }
 	    gameSelect.appendChild(gameImage);
       var gameImageGif = document.createElement("div");
 	    gameImageGif.classList.add("game-image");
-      var highlightPicStyle = 'background-image: linear-gradient( #0000, #0000, #39638577 )';
+      var highlightPicStyle = 'background-image: linear-gradient(-20deg, #0000, #0000, #2e506b99 )';
 	    if (currGame.highlightPic) {
 	      highlightPicStyle += ', url(\'' + currGame.highlightPic + '\')';
 	    }
       gameImageGif.setAttribute('style', highlightPicStyle);
-      gameSelect.gameGifElem = gameImageGif;
 	    gameImage.appendChild(gameImageGif);
+      gameSelect.gameGifElem = gameImageGif;
 	  
 	    var gameFooter = document.createElement("div");
 	    gameFooter.classList.add("game-footer");
@@ -49,11 +49,12 @@ var setGames = function (gamesList, prevGame) {
 	    gameName.classList.add("game-name");
 	    gameName.innerHTML = currGame.name;
 	    gameFooter.appendChild(gameName);
+      
       var authorName = document.createElement("div");
 	    authorName.classList.add("author-name");
 	    authorName.innerHTML = currGame.author;
+	    gameSelect.appendChild(authorName);
       gameSelect.authorElem = authorName;
-	    gameFooter.appendChild(authorName);
 
       if(currGame.minPayers != null || currGame.maxPlayers != null) {
         var gamePlayersNum = document.createElement("div");

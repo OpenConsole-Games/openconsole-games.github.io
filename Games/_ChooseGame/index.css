@@ -41,6 +41,7 @@ body {
 	background-color: #2e506b;
 	display: flex;
 	flex-direction: column;
+  align-items: center;
 	z-index: 0;
   transition: width 0.2s, height 0.2s, transform 0.2s, z-index 0.2s;
 }
@@ -57,9 +58,14 @@ body {
 	height: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 97%;
+	background-size: 100%;
+  background-color: #396385;
   opacity: 0;
-  transition: opacity 0.4s;
+  transition: opacity 0.3s;
+}
+.game-image.static {
+	width: 97%;
+	height: 97%;
 }
 .game-image.active {
 	opacity: 1;
@@ -83,11 +89,10 @@ body {
   text-overflow: ellipsis;
 }
 .author-name {
+  position: absolute;
+  top: 0.4vw; left:0.2vw;
 	font-size: 1.1vw;
-  overflow: hidden;
-  margin: 0 0.6vw;
 	white-space: nowrap;
-  text-overflow: ellipsis;
   opacity: 0;
   transition: opacity 0.4s;
 }
