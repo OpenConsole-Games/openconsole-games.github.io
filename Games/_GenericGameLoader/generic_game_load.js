@@ -310,7 +310,7 @@ var gLoad = new GameLoad();
 (function () {
     function receiveMessage(event) {
         // Do we trust the sender of this message?
-        if (event.origin !== consolePageLocation && strict)
+        if (event.origin !== gLoad.consolePageLocation && gLoad.strict)
             return;
 
         var message = event.data;
