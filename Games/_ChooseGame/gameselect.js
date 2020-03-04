@@ -93,8 +93,8 @@ function setGameActive(x, y) {
     gamesArray[y][x][1].gameAuthorFadeElem.classList.add("active");
     gamesArray[y][x][1].authorElem.classList.add("active");
   }
-  gamesArray[y][x][1].gameGifElem.classList.add("active");
   if (gamesArray[y][x][0].highlightPic) {
+    gamesArray[y][x][1].gameGifElem.classList.add("active");
     gamesArray[y][x][1].gamePicElem.classList.remove("active");
   }
 }
@@ -104,8 +104,8 @@ function setGameInactive(x, y) {
     gamesArray[y][x][1].gameAuthorFadeElem.classList.remove("active");
     gamesArray[y][x][1].authorElem.classList.remove("active");
   }
-  gamesArray[y][x][1].gameGifElem.classList.remove("active");
   if (gamesArray[y][x][0].highlightPic) {
+    gamesArray[y][x][1].gameGifElem.classList.remove("active");
     gamesArray[y][x][1].gamePicElem.classList.add("active");
   }
 }
