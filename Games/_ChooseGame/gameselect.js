@@ -36,14 +36,19 @@ var setGames = function (gamesList, prevGame) {
 
       var gameImageGif = document.createElement("div");
 	    gameImageGif.classList.add("game-image");
-      var highlightPicStyle = 'background-image:';
-      if (currGame.author) {
-        highlightPicStyle += 'linear-gradient(-20deg, #0000, #0000, #2e506b99 ),';
+      var highlightPicStyle = 'background-image: ';
+      if (currGame.author != null && currGame.highlightPic != null) {
+        var highlightPicStyle += 'linear-gradient(-20deg, #0000, #0000, #2e506b99 ), url(\'' + currGame.highlightPic + '\');';
+      }
+      else if (currGame.author != null) {
+        var highlightPicStyle += 'linear-gradient(-20deg, #0000, #0000, #2e506b99 );';
+      }
+      else if (currGame.highlightPic != null) {
+        var highlightPicStyle += 'url(\'' + currGame.highlightPic + '\');';
+      }
+      if (highlightPicStyle != 'background-image: ') {
+        gameImageGif.setAttribute('style', highlightPicStyle);
 	    }
-      if (currGame.highlightPic) {
-	      highlightPicStyle += 'url(\'' + currGame.highlightPic + '\')';
-	    }
-      gameImageGif.setAttribute('style', highlightPicStyle);
 	    gameImage.appendChild(gameImageGif);
       gameSelect.gameGifElem = gameImageGif;
 	  
