@@ -37,7 +37,7 @@ var setGames = function (gamesList, prevGame) {
       var gameImageGif = document.createElement("div");
 	    gameImageGif.classList.add("game-gif");
       if (currGame.highlightPic != null) {
-        gameImageGif.setAttribute('style', 'background-image: url(\'' + currGame.highlightPic + '\');');
+        gameImageGif.setAttribute('style', 'background-color: #396385; background-image: url(\'' + currGame.highlightPic + '\');');
       }
 	    gameImage.appendChild(gameImageGif);
       gameSelect.gameGifElem = gameImageGif;
@@ -93,10 +93,7 @@ function setGameActive(x, y) {
     gamesArray[y][x][1].gameAuthorFadeElem.classList.add("active");
     gamesArray[y][x][1].authorElem.classList.add("active");
   }
-  if (gamesArray[y][x][0].highlightPic) {
-    gamesArray[y][x][1].gameGifElem.classList.add("active");
-    gamesArray[y][x][1].gamePicElem.classList.remove("active");
-  }
+  gamesArray[y][x][1].gameGifElem.classList.add("active");
 }
 function setGameInactive(x, y) {
   gamesArray[y][x][1].classList.remove("active");
@@ -104,10 +101,7 @@ function setGameInactive(x, y) {
     gamesArray[y][x][1].gameAuthorFadeElem.classList.remove("active");
     gamesArray[y][x][1].authorElem.classList.remove("active");
   }
-  if (gamesArray[y][x][0].highlightPic) {
-    gamesArray[y][x][1].gameGifElem.classList.remove("active");
-    gamesArray[y][x][1].gamePicElem.classList.add("active");
-  }
+  gamesArray[y][x][1].gameGifElem.classList.remove("active");
 }
 function randomSelect() {
   var rY = Math.floor(Math.random() * gamesArray.length);
