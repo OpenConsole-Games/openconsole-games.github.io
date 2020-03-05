@@ -127,12 +127,12 @@ GameSelect.prototype.setGameActive = function (x, y) {
   var newElemBottom = gSelect.getElementTopPos(gSelect.selectGame[1] + 1, 0.02) - gSelect.currTopOffset;
   if (newElemBottom > window.innerHeight) {
     gSelect.currTopOffset += newElemBottom - window.innerHeight;
-    gSelect.gamesContainer.style.marginTop = "-" + gSelect.currTopOffset + "px";
+    gSelect.gamesContainer.style.marginTop = (-gSelect.currTopOffset) + "px";
   }
   var newElemTop = gSelect.getElementTopPos(gSelect.selectGame[1], -0.02) - gSelect.currTopOffset;
   if (newElemTop < 0) {
     gSelect.currTopOffset += newElemTop;
-    gSelect.gamesContainer.style.marginTop = "-" + gSelect.currTopOffset + "px";
+    gSelect.gamesContainer.style.marginTop = (-gSelect.currTopOffset) + "px";
   }
 }
 GameSelect.prototype.setGameInactive = function (x, y) {
