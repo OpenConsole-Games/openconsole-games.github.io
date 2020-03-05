@@ -59,9 +59,9 @@ body {
 	background-size: 100%;
 }
 .game-image {
-	width: 97%;
-	height: calc(97% - 2.2vw);
-  margin-top: 1.5%;
+	width: 96%;
+	height: calc(96% - 2.2vw);
+  margin-top: 2%;
 }
 .game-gif {
 	width: 100%;
@@ -70,9 +70,10 @@ body {
   transition: opacity 0.5s;
 }
 .game-author-image-fade {
-	width: 100%;
-	height: 100%;
-  background-image: linear-gradient(-20deg, #0000, #0000, #2e506b99 );
+	width: 102%;
+	height: 102%;
+  transform: translate( -2%, -2% );
+  background-image: linear-gradient(-15deg, #0000, #0000, #396385aa );
   opacity: 0;
   transition: opacity 0.5s;
 }
@@ -96,7 +97,7 @@ body {
 }
 .author-name {
   position: absolute;
-  top: 0.4vw; left: 0.5vw;
+  top: 0.4vw; left: 0.6vw;
 	font-size: 1.1vw;
 	white-space: nowrap;
   opacity: 0;
