@@ -1,21 +1,48 @@
-var selectGame = [-1, -1];
+function GameSelect() {
+  this.selectGame = [-1, -1];
+  this.gamesContainer = document.getElementById("games-container");
+  this.gamesArray = [];
 
-(function() {
-var selectCanvas = document.getElementById("select_canvas");
-var gamesContainer = document.getElementById("games-container");
-var gamesArray = [];
-var setGames = function (gamesList, prevGame) {
-  gamesArray = [];
+  this.strict = true;
+  this.controllerPageLocation = "https://openconsole.github.io";
+
+  this.marginTop = 0.02;
+  this.gameRowHeight = 0.172;
+  this.currTopOffset = 0;
+}
+GameSelect.prototype.initialize = function() {
+  window.addEventListener("message", gameSelect.handleMessage, false);
+  document.addEventListener("keydown", gameSelect.handleKeyDown, false);
+}
+
+
+GameSelect.prototype.postGameSelectMessageToContainer = function (game) {
+    parent.postMessage({ "type":"SetGame", "game":game }, gameSelect.strict ? gameSelect.controllerPageLocation : "*");
+}
+GameSelect.prototype.handleMessage = function (event) {
+  // Do we trust the sender of this message?
+  if (event.origin !== gameSelect.controllerPageLocation && gameSelect.strict)
+    return;
+
+  var message = event.data;
+  switch(message.type) {
+    case "SetGames":
+      gameSelect.setGames(message.gamesList, message.prevGame);
+      break;
+  }
+}
+GameSelect.prototype.setGames = function (gamesList, prevGame) {
+  gameSelect.gamesArray = [];
   var cols = 7;
   var rows = Math.ceil(gamesList.length / cols);
   
-  gamesContainer.innerHTML = '';
+  gameSelect.gamesContainer.innerHTML = '';
   for (var y = 0; y < rows; y++) {
 	  if (y == rows - 1 && gamesList.length % cols != 0) { cols = gamesList.length % cols }
-	  gamesArray.push([]);
+	  gameSelect.gamesArray.push([]);
 	  var gamesRow = document.createElement("div");
 	  gamesRow.classList.add("games-row");
-	  gamesContainer.appendChild(gamesRow);
+	  gameSelect.gamesContainer.appendChild(gamesRow);
     for (var x = 0; x < cols; x++) {
       var currGame = gamesList[y * 7 + x];
 	    var gameContainer = document.createElement("div");
@@ -24,7 +51,7 @@ var setGames = function (gamesList, prevGame) {
 	    var gameSelect = document.createElement("div");
 	    gameSelect.classList.add("game-select");
 	    gameContainer.appendChild(gameSelect);
-	    gamesArray[y].push([currGame, gameSelect]);
+	    gameSelect.gamesArray[y].push([currGame, gameSelect]);
 	  
 	    var gameImage = document.createElement("div");
 	    gameImage.classList.add("game-image", "active");
@@ -78,43 +105,63 @@ var setGames = function (gamesList, prevGame) {
       }
 
       if (prevGame && currGame.name == prevGame) {
-        selectGame = [x, y];
+        gameSelect.selectGame = [x, y];
       }
 	  }
   }
-  if (!checkValid(selectGame)) { selectGame = randomSelect(); }
-  setGameActive(selectGame[0], selectGame[1]);
+  if (!gameSelect.checkValid(gameSelect.selectGame)) { gameSelect.selectGame = gameSelect.randomSelect(); }
+  gameSelect.setGameActive(gameSelect.selectGame[0], gameSelect.selectGame[1]);
 };
 
+GameSelect.prototype.getElementTopPos = function (y) {
+  return window.innerWidth * (gameSelect.marginTop + y * gameSelect.gameRowHeight);
+}
 
-function setGameActive(x, y) {
-  gamesArray[y][x][1].classList.add("active");
-  if(gamesArray[y][x][0].author) {
-    gamesArray[y][x][1].gameAuthorFadeElem.classList.add("active");
-    gamesArray[y][x][1].authorElem.classList.add("active");
+GameSelect.prototype.setGameActive = function (x, y) {
+  gameSelect.gamesArray[y][x][1].classList.add("active");
+  if(gameSelect.gamesArray[y][x][0].author) {
+    gameSelect.gamesArray[y][x][1].gameAuthorFadeElem.classList.add("active");
+    gameSelect.gamesArray[y][x][1].authorElem.classList.add("active");
   }
-  gamesArray[y][x][1].gameGifElem.classList.add("active");
+  gameSelect.gamesArray[y][x][1].gameGifElem.classList.add("active");
 }
-function setGameInactive(x, y) {
-  gamesArray[y][x][1].classList.remove("active");
-  if(gamesArray[y][x][0].author) {
-    gamesArray[y][x][1].gameAuthorFadeElem.classList.remove("active");
-    gamesArray[y][x][1].authorElem.classList.remove("active");
+GameSelect.prototype.setGameInactive = function (x, y) {
+  gameSelect.gamesArray[y][x][1].classList.remove("active");
+  if(gameSelect.gamesArray[y][x][0].author) {
+    gameSelect.gamesArray[y][x][1].gameAuthorFadeElem.classList.remove("active");
+    gameSelect.gamesArray[y][x][1].authorElem.classList.remove("active");
   }
-  gamesArray[y][x][1].gameGifElem.classList.remove("active");
+  gameSelect.gamesArray[y][x][1].gameGifElem.classList.remove("active");
 }
-function randomSelect() {
-  var rY = Math.floor(Math.random() * gamesArray.length);
-  var rX = Math.floor(Math.random() * gamesArray[rY].length);
+GameSelect.prototype.randomSelect = function () {
+  var rY = Math.floor(Math.random() * gameSelect.gamesArray.length);
+  var rX = Math.floor(Math.random() * gameSelect.gamesArray[rY].length);
 	return [rX, rY];
 }
-function checkValid (newSelect) {
-	if (newSelect[1] < 0 || newSelect[1] >= gamesArray.length) return false;
-	if (newSelect[0] < 0 || newSelect[0] >= gamesArray[newSelect[1]].length) return false;
+GameSelect.prototype.checkValid = function (newSelect) {
+	if (newSelect[1] < 0 || newSelect[1] >= gameSelect.gamesArray.length) return false;
+	if (newSelect[0] < 0 || newSelect[0] >= gameSelect.gamesArray[newSelect[1]].length) return false;
 	return true;
 }
-document.onkeydown = function(e) {
-  var newSelect = selectGame.slice();
+
+GameSelect.prototype.setNewSelect = function (newSelect) {
+  gameSelect.setGameInactive(gameSelect.selectGame[0], gameSelect.selectGame[1]);
+	gameSelect.selectGame = newSelect;
+  gameSelect.setGameActive(gameSelect.selectGame[0], gameSelect.selectGame[1]);
+  var newElemBottom = gameSelect.getElementBotPos(gameSelect.selectGame[1] + 1) - gameSelect.currTopOffset;
+  if (newElemBottom > window.innerHeight) {
+    gameSelect.currTopOffset += newElemBottom - window.innerHeight;
+    gameSelect.gamesContainer.style.marginTop = "-" + gameSelect.currTopOffset + "px;";
+  }
+  var newElemTop = gameSelect.getElementBotPos(gameSelect.selectGame[1]) - gameSelect.currTopOffset;
+  if (newElemTop < 0) {
+    gameSelect.currTopOffset += newElemTop;
+    gameSelect.gamesContainer.style.marginTop = "-" + gameSelect.currTopOffset + "px;";
+  }
+
+}
+GameSelect.prototype.handleKeyDown = function (e) {
+  var newSelect = gameSelect.selectGame.slice();
   var changedSelect = false;
   switch (e.key) {
     case "ArrowUp":
@@ -134,141 +181,15 @@ document.onkeydown = function(e) {
 	    newSelect[0]++;
       break;
     case "Enter":
-	    PostGameSelectMessageToContainer(gamesArray[selectGame[1]][selectGame[0]][0]);
+	    gameSelect.postGameSelectMessageToContainer(gameSelect.gamesArray[gameSelect.selectGame[1]][gameSelect.selectGame[0]][0]);
       break;
     default:
   }
-  if (changedSelect && checkValid(newSelect)) {
-    setGameInactive(selectGame[0], selectGame[1]);
-	  selectGame = newSelect;
-    setGameActive(selectGame[0], selectGame[1]);
-  }
-};
-
-var strict = true;
-var controllerPageLocation = "https://openconsole.github.io";
-function PostGameSelectMessageToContainer(game) {
-    parent.postMessage({ "type":"SetGame", "game":game }, strict ? controllerPageLocation : "*");
-}
-
-function receiveMessage(event) {
-  // Do we trust the sender of this message?
-  if (event.origin !== controllerPageLocation && strict)
-    return;
-  
-  var message = event.data;
-  switch(message.type) {
-    case "SetGames":
-      setGames(message.gamesList, message.prevGame);
-      break;
+  if (changedSelect && gameSelect.checkValid(newSelect)) {
+    gameSelect.setNewSelect(newSelect);
   }
 }
-window.addEventListener("message", receiveMessage, false);
-})();
-/*                            
-setGames([
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"../LeagueOfPixels/icon-256.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"../LeagueOfPixels/icon-256.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"../LeagueOfPixels/icon-256.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-},
-{ "name":"League of Pixels", 
-  "relLocation":"None",
-  "gamePic":"https://img.itch.zone/aW1nLzI4MTczODUucG5n/original/O7gO0C.png" 
-}
-]);*/
+
+
+var gameSelect = new GameSelect();
+gameSelect.initialize();

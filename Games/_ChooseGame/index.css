@@ -16,6 +16,7 @@ body {
 	flex-direction:column;
 	flex-wrap: nowrap;
 	margin: 2vw;
+  transition: margin 0.2s;
 }
 .games-row {
 	display:flex;
