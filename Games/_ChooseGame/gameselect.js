@@ -11,38 +11,38 @@ function GameSelect() {
   this.currTopOffset = 0;
 }
 GameSelect.prototype.initialize = function() {
-  window.addEventListener("message", gameSelect.handleMessage, false);
-  document.addEventListener("keydown", gameSelect.handleKeyDown, false);
+  window.addEventListener("message", gSelect.handleMessage, false);
+  document.addEventListener("keydown", gSelect.handleKeyDown, false);
 }
 
 
 GameSelect.prototype.postGameSelectMessageToContainer = function (game) {
-    parent.postMessage({ "type":"SetGame", "game":game }, gameSelect.strict ? gameSelect.controllerPageLocation : "*");
+    parent.postMessage({ "type":"SetGame", "game":game }, gSelect.strict ? gSelect.controllerPageLocation : "*");
 }
 GameSelect.prototype.handleMessage = function (event) {
   // Do we trust the sender of this message?
-  if (event.origin !== gameSelect.controllerPageLocation && gameSelect.strict)
+  if (event.origin !== gSelect.controllerPageLocation && gSelect.strict)
     return;
 
   var message = event.data;
   switch(message.type) {
     case "SetGames":
-      gameSelect.setGames(message.gamesList, message.prevGame);
+      gSelect.setGames(message.gamesList, message.prevGame);
       break;
   }
 }
 GameSelect.prototype.setGames = function (gamesList, prevGame) {
-  gameSelect.gamesArray = [];
+  gSelect.gamesArray = [];
   var cols = 7;
   var rows = Math.ceil(gamesList.length / cols);
   
-  gameSelect.gamesContainer.innerHTML = '';
+  gSelect.gamesContainer.innerHTML = '';
   for (var y = 0; y < rows; y++) {
 	  if (y == rows - 1 && gamesList.length % cols != 0) { cols = gamesList.length % cols }
-	  gameSelect.gamesArray.push([]);
+	  gSelect.gamesArray.push([]);
 	  var gamesRow = document.createElement("div");
 	  gamesRow.classList.add("games-row");
-	  gameSelect.gamesContainer.appendChild(gamesRow);
+	  gSelect.gamesContainer.appendChild(gamesRow);
     for (var x = 0; x < cols; x++) {
       var currGame = gamesList[y * 7 + x];
 	    var gameContainer = document.createElement("div");
@@ -51,7 +51,7 @@ GameSelect.prototype.setGames = function (gamesList, prevGame) {
 	    var gameSelect = document.createElement("div");
 	    gameSelect.classList.add("game-select");
 	    gameContainer.appendChild(gameSelect);
-	    gameSelect.gamesArray[y].push([currGame, gameSelect]);
+	    gSelect.gamesArray[y].push([currGame, gameSelect]);
 	  
 	    var gameImage = document.createElement("div");
 	    gameImage.classList.add("game-image", "active");
@@ -105,63 +105,63 @@ GameSelect.prototype.setGames = function (gamesList, prevGame) {
       }
 
       if (prevGame && currGame.name == prevGame) {
-        gameSelect.selectGame = [x, y];
+        gSelect.selectGame = [x, y];
       }
 	  }
   }
-  if (!gameSelect.checkValid(gameSelect.selectGame)) { gameSelect.selectGame = gameSelect.randomSelect(); }
-  gameSelect.setGameActive(gameSelect.selectGame[0], gameSelect.selectGame[1]);
-};
+  if (!gSelect.checkValid(gSelect.selectGame)) { gSelect.selectGame = gSelect.randomSelect(); }
+  gSelect.setGameActive(gSelect.selectGame[0], gSelect.selectGame[1]);
+}
 
 GameSelect.prototype.getElementTopPos = function (y) {
-  return window.innerWidth * (gameSelect.marginTop + y * gameSelect.gameRowHeight);
+  return window.innerWidth * (gSelect.marginTop + y * gSelect.gameRowHeight);
 }
 
 GameSelect.prototype.setGameActive = function (x, y) {
-  gameSelect.gamesArray[y][x][1].classList.add("active");
-  if(gameSelect.gamesArray[y][x][0].author) {
-    gameSelect.gamesArray[y][x][1].gameAuthorFadeElem.classList.add("active");
-    gameSelect.gamesArray[y][x][1].authorElem.classList.add("active");
+  gSelect.gamesArray[y][x][1].classList.add("active");
+  if(gSelect.gamesArray[y][x][0].author) {
+    gSelect.gamesArray[y][x][1].gameAuthorFadeElem.classList.add("active");
+    gSelect.gamesArray[y][x][1].authorElem.classList.add("active");
   }
-  gameSelect.gamesArray[y][x][1].gameGifElem.classList.add("active");
+  gSelect.gamesArray[y][x][1].gameGifElem.classList.add("active");
 }
 GameSelect.prototype.setGameInactive = function (x, y) {
-  gameSelect.gamesArray[y][x][1].classList.remove("active");
-  if(gameSelect.gamesArray[y][x][0].author) {
-    gameSelect.gamesArray[y][x][1].gameAuthorFadeElem.classList.remove("active");
-    gameSelect.gamesArray[y][x][1].authorElem.classList.remove("active");
+  gSelect.gamesArray[y][x][1].classList.remove("active");
+  if(gSelect.gamesArray[y][x][0].author) {
+    gSelect.gamesArray[y][x][1].gameAuthorFadeElem.classList.remove("active");
+    gSelect.gamesArray[y][x][1].authorElem.classList.remove("active");
   }
-  gameSelect.gamesArray[y][x][1].gameGifElem.classList.remove("active");
+  gSelect.gamesArray[y][x][1].gameGifElem.classList.remove("active");
 }
 GameSelect.prototype.randomSelect = function () {
-  var rY = Math.floor(Math.random() * gameSelect.gamesArray.length);
-  var rX = Math.floor(Math.random() * gameSelect.gamesArray[rY].length);
+  var rY = Math.floor(Math.random() * gSelect.gamesArray.length);
+  var rX = Math.floor(Math.random() * gSelect.gamesArray[rY].length);
 	return [rX, rY];
 }
 GameSelect.prototype.checkValid = function (newSelect) {
-	if (newSelect[1] < 0 || newSelect[1] >= gameSelect.gamesArray.length) return false;
-	if (newSelect[0] < 0 || newSelect[0] >= gameSelect.gamesArray[newSelect[1]].length) return false;
+	if (newSelect[1] < 0 || newSelect[1] >= gSelect.gamesArray.length) return false;
+	if (newSelect[0] < 0 || newSelect[0] >= gSelect.gamesArray[newSelect[1]].length) return false;
 	return true;
 }
 
 GameSelect.prototype.setNewSelect = function (newSelect) {
-  gameSelect.setGameInactive(gameSelect.selectGame[0], gameSelect.selectGame[1]);
-	gameSelect.selectGame = newSelect;
-  gameSelect.setGameActive(gameSelect.selectGame[0], gameSelect.selectGame[1]);
-  var newElemBottom = gameSelect.getElementBotPos(gameSelect.selectGame[1] + 1) - gameSelect.currTopOffset;
+  gSelect.setGameInactive(gSelect.selectGame[0], gSelect.selectGame[1]);
+	gSelect.selectGame = newSelect;
+  gSelect.setGameActive(gSelect.selectGame[0], gSelect.selectGame[1]);
+  var newElemBottom = gSelect.getElementBotPos(gSelect.selectGame[1] + 1) - gSelect.currTopOffset;
   if (newElemBottom > window.innerHeight) {
-    gameSelect.currTopOffset += newElemBottom - window.innerHeight;
-    gameSelect.gamesContainer.style.marginTop = "-" + gameSelect.currTopOffset + "px;";
+    gSelect.currTopOffset += newElemBottom - window.innerHeight;
+    gSelect.gamesContainer.style.marginTop = "-" + gSelect.currTopOffset + "px;";
   }
-  var newElemTop = gameSelect.getElementBotPos(gameSelect.selectGame[1]) - gameSelect.currTopOffset;
+  var newElemTop = gSelect.getElementBotPos(gSelect.selectGame[1]) - gSelect.currTopOffset;
   if (newElemTop < 0) {
-    gameSelect.currTopOffset += newElemTop;
-    gameSelect.gamesContainer.style.marginTop = "-" + gameSelect.currTopOffset + "px;";
+    gSelect.currTopOffset += newElemTop;
+    gSelect.gamesContainer.style.marginTop = "-" + gSelect.currTopOffset + "px;";
   }
 
 }
 GameSelect.prototype.handleKeyDown = function (e) {
-  var newSelect = gameSelect.selectGame.slice();
+  var newSelect = gSelect.selectGame.slice();
   var changedSelect = false;
   switch (e.key) {
     case "ArrowUp":
@@ -181,15 +181,15 @@ GameSelect.prototype.handleKeyDown = function (e) {
 	    newSelect[0]++;
       break;
     case "Enter":
-	    gameSelect.postGameSelectMessageToContainer(gameSelect.gamesArray[gameSelect.selectGame[1]][gameSelect.selectGame[0]][0]);
+	    gSelect.postGameSelectMessageToContainer(gSelect.gamesArray[gSelect.selectGame[1]][gSelect.selectGame[0]][0]);
       break;
     default:
   }
-  if (changedSelect && gameSelect.checkValid(newSelect)) {
-    gameSelect.setNewSelect(newSelect);
+  if (changedSelect && gSelect.checkValid(newSelect)) {
+    gSelect.setNewSelect(newSelect);
   }
 }
 
 
-var gameSelect = new GameSelect();
-gameSelect.initialize();
+var gSelect = new GameSelect();
+gSelect.initialize();
