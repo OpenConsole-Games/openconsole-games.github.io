@@ -124,6 +124,17 @@ GameSelect.prototype.setGameActive = function (x, y) {
     gSelect.gamesArray[y][x][1].authorElem.classList.add("active");
   }
   gSelect.gamesArray[y][x][1].gameGifElem.classList.add("active");
+
+  var newElemBottom = gSelect.getElementTopPos(gSelect.selectGame[1] + 1) - gSelect.currTopOffset;
+  if (newElemBottom > window.innerHeight) {
+    gSelect.currTopOffset += newElemBottom - window.innerHeight;
+    gSelect.gamesContainer.style.marginTop = "-" + gSelect.currTopOffset + "px";
+  }
+  var newElemTop = gSelect.getElementTopPos(gSelect.selectGame[1]) - gSelect.currTopOffset;
+  if (newElemTop < 0) {
+    gSelect.currTopOffset += newElemTop;
+    gSelect.gamesContainer.style.marginTop = "-" + gSelect.currTopOffset + "px";
+  }
 }
 GameSelect.prototype.setGameInactive = function (x, y) {
   gSelect.gamesArray[y][x][1].classList.remove("active");
@@ -148,17 +159,6 @@ GameSelect.prototype.setNewSelect = function (newSelect) {
   gSelect.setGameInactive(gSelect.selectGame[0], gSelect.selectGame[1]);
 	gSelect.selectGame = newSelect;
   gSelect.setGameActive(gSelect.selectGame[0], gSelect.selectGame[1]);
-  var newElemBottom = gSelect.getElementTopPos(gSelect.selectGame[1] + 1) - gSelect.currTopOffset;
-  if (newElemBottom > window.innerHeight) {
-    gSelect.currTopOffset += newElemBottom - window.innerHeight;
-    gSelect.gamesContainer.style.marginTop = "-" + gSelect.currTopOffset + "px";
-  }
-  var newElemTop = gSelect.getElementTopPos(gSelect.selectGame[1]) - gSelect.currTopOffset;
-  if (newElemTop < 0) {
-    gSelect.currTopOffset += newElemTop;
-    gSelect.gamesContainer.style.marginTop = "-" + gSelect.currTopOffset + "px";
-  }
-
 }
 GameSelect.prototype.handleKeyDown = function (e) {
   var newSelect = gSelect.selectGame.slice();
