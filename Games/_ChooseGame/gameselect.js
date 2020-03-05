@@ -6,7 +6,6 @@ function GameSelect() {
   this.strict = true;
   this.controllerPageLocation = "https://openconsole.github.io";
 
-  this.marginTop = 0.02;
   this.gameRowHeight = 0.132;
   this.currTopOffset = 0;
 }
@@ -113,8 +112,8 @@ GameSelect.prototype.setGames = function (gamesList, prevGame) {
   gSelect.setGameActive(gSelect.selectGame[0], gSelect.selectGame[1]);
 }
 
-GameSelect.prototype.getElementTopPos = function (y) {
-  return window.innerWidth * (gSelect.marginTop + y * gSelect.gameRowHeight);
+GameSelect.prototype.getElementTopPos = function (y, vwOffset) {
+  return window.innerWidth * (y * gSelect.gameRowHeight + vwOffset);
 }
 
 GameSelect.prototype.setGameActive = function (x, y) {
@@ -125,12 +124,12 @@ GameSelect.prototype.setGameActive = function (x, y) {
   }
   gSelect.gamesArray[y][x][1].gameGifElem.classList.add("active");
 
-  var newElemBottom = gSelect.getElementTopPos(gSelect.selectGame[1] + 1) - gSelect.currTopOffset;
+  var newElemBottom = gSelect.getElementTopPos(gSelect.selectGame[1] + 1, 0.02) - gSelect.currTopOffset;
   if (newElemBottom > window.innerHeight) {
     gSelect.currTopOffset += newElemBottom - window.innerHeight;
     gSelect.gamesContainer.style.marginTop = "-" + gSelect.currTopOffset + "px";
   }
-  var newElemTop = gSelect.getElementTopPos(gSelect.selectGame[1]) - gSelect.currTopOffset;
+  var newElemTop = gSelect.getElementTopPos(gSelect.selectGame[1], -0.02) - gSelect.currTopOffset;
   if (newElemTop < 0) {
     gSelect.currTopOffset += newElemTop;
     gSelect.gamesContainer.style.marginTop = "-" + gSelect.currTopOffset + "px";
