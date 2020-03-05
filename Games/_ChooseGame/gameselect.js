@@ -7,7 +7,7 @@ function GameSelect() {
   this.controllerPageLocation = "https://openconsole.github.io";
 
   this.marginTop = 0.02;
-  this.gameRowHeight = 0.172;
+  this.gameRowHeight = 0.132;
   this.currTopOffset = 0;
 }
 GameSelect.prototype.initialize = function() {
