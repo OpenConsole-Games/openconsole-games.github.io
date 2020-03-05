@@ -148,12 +148,12 @@ GameSelect.prototype.setNewSelect = function (newSelect) {
   gSelect.setGameInactive(gSelect.selectGame[0], gSelect.selectGame[1]);
 	gSelect.selectGame = newSelect;
   gSelect.setGameActive(gSelect.selectGame[0], gSelect.selectGame[1]);
-  var newElemBottom = gSelect.getElementBotPos(gSelect.selectGame[1] + 1) - gSelect.currTopOffset;
+  var newElemBottom = gSelect.getElementTopPos(gSelect.selectGame[1] + 1) - gSelect.currTopOffset;
   if (newElemBottom > window.innerHeight) {
     gSelect.currTopOffset += newElemBottom - window.innerHeight;
     gSelect.gamesContainer.style.marginTop = "-" + gSelect.currTopOffset + "px;";
   }
-  var newElemTop = gSelect.getElementBotPos(gSelect.selectGame[1]) - gSelect.currTopOffset;
+  var newElemTop = gSelect.getElementTopPos(gSelect.selectGame[1]) - gSelect.currTopOffset;
   if (newElemTop < 0) {
     gSelect.currTopOffset += newElemTop;
     gSelect.gamesContainer.style.marginTop = "-" + gSelect.currTopOffset + "px;";
