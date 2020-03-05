@@ -124,7 +124,7 @@ GameSelect.prototype.setGameActive = function (x, y) {
   }
   gSelect.gamesArray[y][x][1].gameGifElem.classList.add("active");
 
-  var newElemBottom = gSelect.getElementTopPos(gSelect.selectGame[1] + 1, 0.02) - gSelect.currTopOffset;
+  var newElemBottom = gSelect.getElementTopPos(gSelect.selectGame[1] + 1, 0.04) - gSelect.currTopOffset;
   if (newElemBottom > window.innerHeight) {
     gSelect.currTopOffset += newElemBottom - window.innerHeight;
     gSelect.gamesContainer.style.marginTop = (-gSelect.currTopOffset) + "px";
