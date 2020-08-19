@@ -3,7 +3,7 @@ function GameSelect() {
   this.gamesContainer = document.getElementById("games-container");
   this.gamesArray = [];
 
-  this.strict = true;
+  this.strict = false;
   this.controllerPageLocation = "https://openconsole.github.io";
 
   this.gameRowHeight = 0.132;
