@@ -98,15 +98,20 @@ GameSelect.prototype.setGames = function (gamesList, prevGame) {
         gamePlayersNumber.classList.add("game-players-num-label");
         gamePlayersNumber.innerHTML = "";
         if(currGame.minPlayers != null) gamePlayersNumber.innerHTML += currGame.minPlayers;
-        if(currGame.minPlayers != null && currGame.maxPlayers != null) gamePlayersNumber.innerHTML += " - ";
-        if(currGame.maxPlayers != null) gamePlayersNumber.innerHTML += currGame.maxPlayers;
+		if(currGame.maxPlayers != null) {
+		  if(currGame.maxPlayers == 0) gamePlayersNumber.innerHTML += " +";
+		  else {
+            if(currGame.minPlayers != null) gamePlayersNumber.innerHTML += " - ";
+            gamePlayersNumber.innerHTML += currGame.maxPlayers;
+		  }
+		}
         gamePlayersNum.appendChild(gamePlayersNumber);
       }
 
       if (prevGame && currGame.name == prevGame) {
         gSelect.selectGame = [x, y];
       }
-	  }
+	}
   }
   if (!gSelect.checkValid(gSelect.selectGame)) { gSelect.selectGame = gSelect.randomSelect(); }
   gSelect.setGameActive(gSelect.selectGame[0], gSelect.selectGame[1]);
