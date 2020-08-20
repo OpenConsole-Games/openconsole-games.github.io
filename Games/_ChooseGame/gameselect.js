@@ -6,7 +6,7 @@ function GameSelect() {
   this.strict = false;
   this.controllerPageLocation = "https://openconsole.github.io";
 
-  this.gameRowHeight = 0.132;
+  this.gameRowHeight = 0.138;
   this.currTopOffset = 0;
 }
 GameSelect.prototype.initialize = function() {
@@ -134,7 +134,7 @@ GameSelect.prototype.setGameActive = function (x, y) {
     gSelect.currTopOffset += newElemBottom - window.innerHeight;
     gSelect.gamesContainer.style.marginTop = (-gSelect.currTopOffset) + "px";
   }
-  var newElemTop = gSelect.getElementTopPos(gSelect.selectGame[1], -0.02) - gSelect.currTopOffset;
+  var newElemTop = gSelect.getElementTopPos(gSelect.selectGame[1], -0.028) - gSelect.currTopOffset;
   if (newElemTop < 0) {
     gSelect.currTopOffset += newElemTop;
     gSelect.gamesContainer.style.marginTop = (-gSelect.currTopOffset) + "px";
