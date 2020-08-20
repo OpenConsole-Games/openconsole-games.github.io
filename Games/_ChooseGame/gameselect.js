@@ -87,7 +87,7 @@ GameSelect.prototype.setGames = function (gamesList, prevGame) {
 	    gameSelect.appendChild(authorName);
       gameSelect.authorElem = authorName;
 
-      if(currGame.minPayers != null || currGame.maxPlayers != null) {
+      if(currGame.minPlayers != null || currGame.maxPlayers != null) {
         var gamePlayersNum = document.createElement("div");
         gamePlayersNum.classList.add("game-players-num-container");
         gameSelect.appendChild(gamePlayersNum);
@@ -97,8 +97,8 @@ GameSelect.prototype.setGames = function (gamesList, prevGame) {
         var gamePlayersNumber = document.createElement("div");
         gamePlayersNumber.classList.add("game-players-num-label");
         gamePlayersNumber.innerHTML = "";
-        if(currGame.minPayers != null) gamePlayersNumber.innerHTML += currGame.minPayers;
-        if(currGame.minPayers != null && currGame.maxPlayers != null) gamePlayersNumber.innerHTML += " - ";
+        if(currGame.minPlayers != null) gamePlayersNumber.innerHTML += currGame.minPlayers;
+        if(currGame.minPlayers != null && currGame.maxPlayers != null) gamePlayersNumber.innerHTML += " - ";
         if(currGame.maxPlayers != null) gamePlayersNumber.innerHTML += currGame.maxPlayers;
         gamePlayersNum.appendChild(gamePlayersNumber);
       }
