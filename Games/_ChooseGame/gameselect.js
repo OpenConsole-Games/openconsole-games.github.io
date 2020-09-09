@@ -24,9 +24,12 @@ GameSelect.prototype.handleMessage = function (event) {
     return;
 
   var message = event.data;
-  switch(message.type) {
+  switch (message.type) {
     case "SetGames":
       gSelect.setGames(message.gamesList, message.prevGame);
+      break;
+    case "SetPlayers":
+      gSelect.setPlayers(message.players);
       break;
   }
 }
@@ -87,7 +90,7 @@ GameSelect.prototype.setGames = function (gamesList, prevGame) {
       gameSelect.appendChild(authorName);
       gameSelect.authorElem = authorName;
 
-      if(currGame.minPlayers != null || currGame.maxPlayers != null) {
+      if (currGame.minPlayers != null || currGame.maxPlayers != null) {
         var gamePlayersNum = document.createElement("div");
         gamePlayersNum.classList.add("game-players-num-container");
         gameSelect.appendChild(gamePlayersNum);
@@ -97,11 +100,11 @@ GameSelect.prototype.setGames = function (gamesList, prevGame) {
         var gamePlayersNumber = document.createElement("div");
         gamePlayersNumber.classList.add("game-players-num-label");
         gamePlayersNumber.innerHTML = "";
-        if(currGame.minPlayers != null) gamePlayersNumber.innerHTML += currGame.minPlayers;
-        if(currGame.maxPlayers != null) {
-          if(currGame.maxPlayers == 0) gamePlayersNumber.innerHTML += " +";
+        if (currGame.minPlayers != null) gamePlayersNumber.innerHTML += currGame.minPlayers;
+        if (currGame.maxPlayers != null) {
+          if (currGame.maxPlayers == 0) gamePlayersNumber.innerHTML += " +";
           else {
-            if(currGame.minPlayers != null) gamePlayersNumber.innerHTML += " - ";
+            if (currGame.minPlayers != null) gamePlayersNumber.innerHTML += " - ";
             gamePlayersNumber.innerHTML += currGame.maxPlayers;
           }
         }
@@ -116,6 +119,29 @@ GameSelect.prototype.setGames = function (gamesList, prevGame) {
   if (!gSelect.checkValid(gSelect.selectGame)) { gSelect.selectGame = gSelect.randomSelect(); }
   gSelect.setGameActive(gSelect.selectGame[0], gSelect.selectGame[1]);
 }
+GameSelect.prototype.setPlayers = function (players) {
+  var playerCount = players.length;
+  for (var y = 0; y < gSelect.gamesArray.length; y++) {
+    for (var x = 0; x < gSelect.gamesArray[y].length; x++) {
+      var disable = false;
+      var game = gSelect.gamesArray[y][x][0];
+      if (game.minPlayers != null) {
+        disable = disable || playerCount < game.minPlayers;
+      }
+      if (game.maxPlayers == null && game.minPlayers != null) {
+        disable = disable || playerCount > game.minPlayers;
+      } else if (game.maxPlayers != null && game.maxPlayers != 0) {
+        disable = disable || playerCount > game.maxPlayers;
+      }
+
+      if (disable) {
+        gSelect.gamesArray[y][x][1].style.opacity = 0.25;
+      } else {
+        gSelect.gamesArray[y][x][1].style.opacity = 1;
+      }
+    }
+  }
+}
 
 GameSelect.prototype.getElementTopPos = function (y, vwOffset) {
   return window.innerWidth * (y * gSelect.gameRowHeight + vwOffset);
@@ -123,7 +149,7 @@ GameSelect.prototype.getElementTopPos = function (y, vwOffset) {
 
 GameSelect.prototype.setGameActive = function (x, y) {
   gSelect.gamesArray[y][x][1].classList.add("active");
-  if(gSelect.gamesArray[y][x][0].author) {
+  if (gSelect.gamesArray[y][x][0].author) {
     gSelect.gamesArray[y][x][1].gameAuthorFadeElem.classList.add("active");
     gSelect.gamesArray[y][x][1].authorElem.classList.add("active");
   }
@@ -142,7 +168,7 @@ GameSelect.prototype.setGameActive = function (x, y) {
 }
 GameSelect.prototype.setGameInactive = function (x, y) {
   gSelect.gamesArray[y][x][1].classList.remove("active");
-  if(gSelect.gamesArray[y][x][0].author) {
+  if (gSelect.gamesArray[y][x][0].author) {
     gSelect.gamesArray[y][x][1].gameAuthorFadeElem.classList.remove("active");
     gSelect.gamesArray[y][x][1].authorElem.classList.remove("active");
   }
