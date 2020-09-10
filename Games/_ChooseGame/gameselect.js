@@ -135,9 +135,9 @@ GameSelect.prototype.setPlayers = function (players) {
       }
 
       if (disable) {
-        gSelect.gamesArray[y][x][1].style.opacity = 0.25;
+        gSelect.gamesArray[y][x][1].classList.add("disabled");
       } else {
-        gSelect.gamesArray[y][x][1].style.opacity = 1;
+        gSelect.gamesArray[y][x][1].classList.remove("disabled");
       }
     }
   }
