@@ -2,13 +2,17 @@ body {
   overflow: hidden;
   padding: 0;
   margin: 0;
-  width: 100VW; height: 100VH;
   background-color: #223b4f;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 }
+.page {
+ position: absolute;
+ top: 0; bottom: 0; left: 0; right: 0;
+}
+
 #select_canvas {
   width: 100%; height: 100%;
 }
