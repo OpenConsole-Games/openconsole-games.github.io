@@ -23,5 +23,6 @@
 { "name":"bitbout", "author":"Benji Kay", "relLocation":"RemoteGames/bitbout.json", "minPlayers":2, "maxPlayers":4, "gamePic":"https://img.itch.zone/aW1hZ2UvNTk4ODcvMjg4Nzg5LmdpZg==/315x250%23cm/9dYppN.gif", "highlightPic":"https://img.itch.zone/aW1hZ2UvNTk4ODcvMjg4Nzg5LmdpZg==/original/m9kwOZ.gif" },
 { "name":"Trash wars", "author":"pestogames", "relLocation":"UnityGames/trashwars.json", "minPlayers":1, "maxPlayers":2, "gamePic":"https://img.itch.zone/aW1nLzI1NjEzOTkucG5n/315x250%23c/jn7T9O.png" },
 { "name":"Fencing", "author":"Sweaters", "relLocation":"RemoteGames/fencing.json", "minPlayers":1, "maxPlayers":2, "gamePic":"https://img.itch.zone/aW1nLzE1NTg3MTAucG5n/315x250%23c/LjwaGu.png" },
-{ "name":"Linked Space", "author":"Álvaro", "relLocation":"RemoteGames/linkedspace.json", "minPlayers":2, "gamePic":"https://img.itch.zone/aW1hZ2UvMjE4MDg1LzEwMzIwNzkucG5n/315x250%23c/Sg%2B0QS.png" }
+{ "name":"Linked Space", "author":"Álvaro", "relLocation":"RemoteGames/linkedspace.json", "minPlayers":2, "gamePic":"https://img.itch.zone/aW1hZ2UvMjE4MDg1LzEwMzIwNzkucG5n/315x250%23c/Sg%2B0QS.png" },
+{ "name":"co-Up", "author":"More_RetroGames", "relLocation":"RemoteGames/coup.json", "minPlayers":2, "gamePic":"https://img.itch.zone/aW1hZ2UvMjk0NzYzLzE0Mzg2MDAucG5n/315x250%23c/DfP8h1.png" }
 ]
