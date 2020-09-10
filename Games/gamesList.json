@@ -20,5 +20,8 @@
 { "name":"Titonic Fisherman", "author":"Froach Club", "relLocation":"TitonicFisherman/settings.json", "minPlayers":1, "maxPlayers":8, "gamePic":"https://img.itch.zone/aW1hZ2UvMjQ0NDcxLzExOTA3MDUucG5n/315x250%23c/kkF6HP.png" },
 { "name":"One Button Duel", "author":"Sean", "relLocation":"OneButtonDuel/settings.json", "minPlayers":2, "gamePic":"https://img.itch.zone/aW1hZ2UvNzk0NjAvMzczNTU1LmdpZg==/315x250%23cm/5HdOpI.gif", "highlightPic":"https://img.itch.zone/aW1hZ2UvNzk0NjAvMzczNTU1LmdpZg==/original/MjjG59.gif" },
 { "name":"Partypillars", "author":"Krisjet", "relLocation":"Partypillars/settings.json", "minPlayers":2, "maxPlayers":4, "gamePic":"https://img.itch.zone/aW1hZ2UvOTM3OS81MDExMC5wbmc=/315x250%23c/EryOR5.png" },
-{ "name":"bitbout", "author":"Benji Kay", "relLocation":"RemoteGames/bitbout.json", "minPlayers":2, "maxPlayers":4, "gamePic":"https://img.itch.zone/aW1hZ2UvNTk4ODcvMjg4Nzg5LmdpZg==/315x250%23cm/9dYppN.gif", "highlightPic":"https://img.itch.zone/aW1hZ2UvNTk4ODcvMjg4Nzg5LmdpZg==/original/m9kwOZ.gif" }
+{ "name":"bitbout", "author":"Benji Kay", "relLocation":"RemoteGames/bitbout.json", "minPlayers":2, "maxPlayers":4, "gamePic":"https://img.itch.zone/aW1hZ2UvNTk4ODcvMjg4Nzg5LmdpZg==/315x250%23cm/9dYppN.gif", "highlightPic":"https://img.itch.zone/aW1hZ2UvNTk4ODcvMjg4Nzg5LmdpZg==/original/m9kwOZ.gif" },
+{ "name":"Trash wars", "author":"pestogames", "relLocation":"UnityGames/trashwars.json", "minPlayers":1, "maxPlayers":2, "gamePic":"https://img.itch.zone/aW1nLzI1NjEzOTkucG5n/315x250%23c/jn7T9O.png" },
+{ "name":"Fencing", "author":"Sweaters", "relLocation":"RemoteGames/fencing.json", "minPlayers":1, "maxPlayers":2, "gamePic":"https://img.itch.zone/aW1nLzE1NTg3MTAucG5n/315x250%23c/LjwaGu.png" },
+{ "name":"Linked Space", "author":"Álvaro", "relLocation":"RemoteGames/linkedspace.json", "minPlayers":2, "gamePic":"https://img.itch.zone/aW1hZ2UvMjE4MDg1LzEwMzIwNzkucG5n/315x250%23c/Sg%2B0QS.png" }
 ]

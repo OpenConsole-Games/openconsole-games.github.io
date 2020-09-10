@@ -3,7 +3,7 @@
 "canvas": { "aspect": "0" },
 "ctrl":   { "loc": "https://openconsole.github.io/Controllers/one_joystick/one_joystick.html" },
 "controls": {
-  "maxPlayers": 4,
+  "maxPlayers": 2,
   "keymap": [
     {
       "Up":   { "isKeyboard":true, "data":[87, "w", "KeyW"] },

@@ -1,0 +1,12 @@
+{
+"game":{"type":"remote","relLoc":null,"absLoc":"https://v6p9d9t4.ssl.hwcdn.net/html/756526-68039/Build/Web/index.html?v=1542784549"},
+"canvas":{"aspect":"1.3333","id":"canvas"},
+"ctrl":{"loc":"https://openconsole.github.io/Controllers/one_joystick/one_joystick.html"},
+"controls":{
+  "keymap":[
+    {"Up":{"isKeyboard":true,"data":[87,"w","KeyW"]},"Left":{"isKeyboard":true,"data":[65,"a","KeyA"]},"Down":{"isKeyboard":true,"data":[83,"s","KeyS"]},"Right":{"isKeyboard":true,"data":[68,"d","KeyD"]},"a":{"innerHTML":"Take/Place","isKeyboard":true,"data":[69,"e","KeyE"]}},
+    {"Up":{"isKeyboard":true,"data":[73,"i","KeyI"]},"Left":{"isKeyboard":true,"data":[74,"j","KeyJ"]},"Down":{"isKeyboard":true,"data":[75,"k","KeyK"]},"Right":{"isKeyboard":true,"data":[76,"l","KeyL"]},"a":{"innerHTML":"Take/Place","isKeyboard":true,"data":[79,"o","KeyO"]}}
+    ],
+  "maxPlayers":2
+}
+}
