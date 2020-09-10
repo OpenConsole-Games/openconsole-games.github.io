@@ -1,78 +1,79 @@
 body {
-	overflow	: hidden;
-	padding		: 0;
-	margin		: 0;
-	width: 100VW; height: 100VH;
-	background-color: #223b4f;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  width: 100VW; height: 100VH;
+  background-color: #223b4f;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 }
 #select_canvas {
-	width:100%; height:100%;
+  width: 100%; height: 100%;
 }
 #games-container {
-	display:flex;
-	flex-direction:column;
-	flex-wrap: nowrap;
-	margin: 2vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 2vw;
   transition: margin 0.2s;
 }
 .games-row {
-	display:flex;
-	flex-wrap: nowrap;
-	flex-shrink:0;
-	max-height: 16vw;
-	margin: 0.6vw 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  max-height: 16vw;
+  margin: 0.6vw 0;
 }
 .game-container {
-	width: 13vw;
-	height: 12.6vw;
-	flex-shrink:0;
-	margin: 0 0.3vw;
+  width: 13vw;
+  height: 12.6vw;
+  flex-shrink: 0;
+  margin: 0 0.3vw;
 }
 .game-select {
   position: relative;
-	color:#fff;
-	width: 100%; height: 100%;
-	border-bottom-style: solid;
-	border-right-style: solid;
-	border-width: medium;
-	border-color: #172836;
-	background-color: #2e506b;
-	display: flex;
-	flex-direction: column;
+  color: #fff;
+  width: 100%; height: 100%;
+  border-bottom-style: solid;
+  border-right-style: solid;
+  border-width: medium;
+  border-color: #172836;
+  background-color: #2e506b;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-	z-index: 0;
+  z-index: 0;
   transition: width 0.2s, height 0.2s, transform 0.2s, z-index 0.2s;
 }
 .game-select.active {
-	width: 16vw;
-	height: 15vw;
-	transform: translate(-1vw, -1vw);
-	background-color: #396385;
-	border-color: #1b2f40;
-	z-index: 1;
+  width: 16vw;
+  height: 15vw;
+  transform: translate(-1vw, -1vw);
+  background-color: #396385;
+  border-color: #1b2f40;
+  z-index: 1;
 }
 .game-image, .game-gif {
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
 }
 .game-image {
-	width: 96%;
-	height: calc(96% - 2.2vw);
+  width: 96%;
+  height: calc(96% - 2.2vw);
   margin-top: 2%;
 }
 .game-gif {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   transition: opacity 0.5s;
 }
 .game-author-image-fade {
-	width: 102%;
-	height: 102%;
+  width: 102%;
+  height: 102%;
   transform: translate( -2%, -2% );
   background-image: linear-gradient(-15deg, #0000, #0000, #396385aa );
   opacity: 0;
@@ -82,25 +83,25 @@ body {
   opacity: 1;
 }
 .game-footer {
-  display:flex;
+  display: flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-	width: 100%;
-	height: 2.2vw;
+  width: 100%;
+  height: 2.2vw;
 }
 .game-name {
-	font-size:1.3vw;
+  font-size: 1.3vw;
   overflow: hidden;
   margin: 0 0.6vw;
-	white-space: nowrap;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
 .author-name {
   position: absolute;
   top: 0.4vw; left: 0.6vw;
-	font-size: 1.1vw;
-	white-space: nowrap;
+  font-size: 1.1vw;
+  white-space: nowrap;
   opacity: 0;
   transition: opacity 0.4s;
 }
@@ -109,9 +110,9 @@ body {
 }
 
 .game-players-num-container {
-  position:absolute;
-  top:0; right:0;
-  width:4.5vw; height:3vw;
+  position: absolute;
+  top: 0; right: 0;
+  width: 4.5vw; height: 3vw;
   background-image: url('player_background.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -121,7 +122,7 @@ body {
   justify-content: flex-end;
   align-items: flex-start;
   padding-right: 0.35vw;
-  padding-top:0.25vw;
+  padding-top: 0.25vw;
 }
 .game-players-num-symbol {
   width: 0.6vw; height: 0.6vw;
@@ -129,9 +130,9 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  margin-right:0.2vw;
-  margin-top:0.15vw;
+  margin-right: 0.2vw;
+  margin-top: 0.15vw;
 }
 .game-players-num-label {
-  font-size:0.8vw;
+  font-size: 0.8vw;
 }
