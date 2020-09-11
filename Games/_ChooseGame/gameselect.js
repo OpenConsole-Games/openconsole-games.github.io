@@ -8,6 +8,8 @@ function GameSelect() {
 
   this.gameRowHeight = 0.138;
   this.currTopOffset = 0;
+
+  this.players = null;
 }
 GameSelect.prototype.initialize = function() {
   window.addEventListener("message", gSelect.handleMessage, false);
@@ -118,8 +120,10 @@ GameSelect.prototype.setGames = function (gamesList, prevGame) {
   }
   if (!gSelect.checkValid(gSelect.selectGame)) { gSelect.selectGame = gSelect.randomSelect(); }
   gSelect.setGameActive(gSelect.selectGame[0], gSelect.selectGame[1]);
+  if (gSelect.players != null) gSelect.setPlayers(gSelect.players);
 }
 GameSelect.prototype.setPlayers = function (players) {
+  gSelect.players = players;
   var playerCount = players.length;
   for (var y = 0; y < gSelect.gamesArray.length; y++) {
     for (var x = 0; x < gSelect.gamesArray[y].length; x++) {
