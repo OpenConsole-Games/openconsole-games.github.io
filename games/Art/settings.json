@@ -1,0 +1,47 @@
+{
+"game":   { "relLoc": "index.html", "type":"cached" },
+"canvas": { "aspect": "1.7777777777", "id": "c2canvas" },
+"ctrl":   { "loc": "https://openconsole.github.io/openconsole/controllers/two_button/two_button.html" },
+"controls": {
+  "maxPlayers": 18,
+  "keymap": [
+    {
+      "b":    { "innerHTML":"O", "isKeyboard":true, "data":[79, "O", "KeyO"] }
+    },{
+      "b":    { "innerHTML":"P", "isKeyboard":true, "data":[80, "P", "KeyP"] }
+    },{
+      "b":    { "innerHTML":"E", "isKeyboard":true, "data":[69, "E", "KeyE"] }
+    },{
+      "b":    { "innerHTML":"N", "isKeyboard":true, "data":[78, "N", "KeyN"] }
+    },{
+      "b":    { "innerHTML":"C", "isKeyboard":true, "data":[67, "C", "KeyC"] }
+    },{
+      "b":    { "innerHTML":"S", "isKeyboard":true, "data":[83, "S", "KeyS"] }
+    },{
+      "b":    { "innerHTML":"L", "isKeyboard":true, "data":[76, "L", "KeyL"] }
+    },{
+      "b":    { "innerHTML":"Q", "isKeyboard":true, "data":[81, "Q", "KeyQ"] }
+    },{
+      "b":    { "innerHTML":"W", "isKeyboard":true, "data":[87, "W", "KeyW"] }
+    },{
+      "b":    { "innerHTML":"R", "isKeyboard":true, "data":[82, "R", "KeyR"] }
+    },{
+      "b":    { "innerHTML":"T", "isKeyboard":true, "data":[84, "T", "KeyT"] }
+    },{
+      "b":    { "innerHTML":"Y", "isKeyboard":true, "data":[89, "Y", "KeyY"] }
+    },{
+      "b":    { "innerHTML":"U", "isKeyboard":true, "data":[85, "U", "KeyU"] }
+    },{
+      "b":    { "innerHTML":"I", "isKeyboard":true, "data":[73, "I", "KeyI"] }
+    },{
+      "b":    { "innerHTML":"K", "isKeyboard":true, "data":[75, "K", "KeyK"] }
+    },{
+      "b":    { "innerHTML":"J", "isKeyboard":true, "data":[74, "J", "KeyJ"] }
+    },{
+      "b":    { "innerHTML":"H", "isKeyboard":true, "data":[72, "H", "KeyH"] }
+    },{
+      "b":    { "innerHTML":"G", "isKeyboard":true, "data":[71, "G", "KeyG"] }
+    }
+  ] 
+}
+}

@@ -12,6 +12,6 @@
 "relLocation": "index.html",
 "loadUnityGame": false,
 "canvasID": "select_canvas",
-"controllerLocation": "https://openconsole.github.io/Controllers/choose_game/choose_game.html",
+"controllerLocation": "https://openconsole.github.io/openconsole/controllers/choose_game/choose_game.html",
 "controllerLayout": ""
 }

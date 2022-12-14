@@ -1,0 +1,17 @@
+{
+"game":   { "relLoc": "index.html", "type":"cached" },
+"canvas": { "aspect": "0", "id": "select_canvas" },
+"ctrl":   { "loc": "https://openconsole.github.io/openconsole/controllers/choose_game/choose_game.html" },
+"controls": {
+  "maxPlayers": 1,
+  "keymap": [
+    {
+      "Up":    	{ "isKeyboard":true, "data":[38, "ArrowUp", "ArrowUp"] },
+      "Down":		{ "isKeyboard":true, "data":[40, "ArrowDown", "ArrowDown"] },
+      "Left":		{ "isKeyboard":true, "data":[37, "ArrowLeft", "ArrowLeft"] },
+      "Right":	{ "isKeyboard":true, "data":[39, "ArrowRight", "ArrowRight"] },
+      "Enter":	{ "isKeyboard":true, "data":[13, "Enter", "Enter"] }
+    }
+  ]
+}
+}

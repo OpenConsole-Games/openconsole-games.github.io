@@ -1,0 +1,43 @@
+{
+"game":   { "absLoc": "https://v6p9d9t4.ssl.hwcdn.net/html/199800/bitbout-itch-v1.0.3/index.html", "type":"remote" },
+"canvas": { "aspect": "1" },
+"ctrl":   { "loc": "https://openconsole.github.io/openconsole/controllers/one_joystick/one_joystick.html" },
+"controls": {
+  "maxPlayers": 4,
+  "keymap": [
+    {
+      "Up":   { "isKeyboard":true, "data":[87, "w", "KeyW"] },
+      "Left": { "isKeyboard":true, "data":[65, "a", "KeyA"] },
+      "Down": { "isKeyboard":true, "data":[83, "s", "KeyS"] },
+      "Right":{ "isKeyboard":true, "data":[68, "d", "KeyD"] },
+      "a":    { "innerHTML":"Attack", "isKeyboard":true, "data":[81, "q", "KeyQ"] },
+      "Start":{ "innerHTML":"Start", "isKeyboard":true, "data":[13, "Enter", "Enter"] },
+      "Escape":{ "innerHTML":"Map +-", "isKeyboard":true, "data":[77, "m", "KeyM"] }
+    },{
+      "Up":   { "isKeyboard":true, "data":[38, "ArrowUp", "ArrowUp"] },
+      "Left": { "isKeyboard":true, "data":[37, "ArrowLeft", "ArrowLeft"] },
+      "Down": { "isKeyboard":true, "data":[40, "ArrowDown", "ArrowDown"] },
+      "Right":{ "isKeyboard":true, "data":[39, "ArrowRight", "ArrowRight"] },
+      "a":    { "innerHTML":"Attack", "isKeyboard":true, "data":[16, "Shift", "ShiftRight"] },
+      "Start":{ "innerHTML":"Music", "isKeyboard":true, "data":[66, "b", "KeyB"] },
+      "Escape":{"innerHTML":"#Players +-", "isKeyboard":true, "data":[80, "p", "KeyP"] }
+    },{
+      "Up":   { "isKeyboard":true, "data":[73, "i", "KeyI"] },
+      "Left": { "isKeyboard":true, "data":[74, "j", "KeyJ"] },
+      "Down": { "isKeyboard":true, "data":[75, "k", "KeyK"] },
+      "Right":{ "isKeyboard":true, "data":[76, "l", "KeyL"] },
+      "a":    { "innerHTML":"Attack", "isKeyboard":true, "data":[85, "u", "KeyU"] },
+      "Start":{ "innerHTML":"Music", "isKeyboard":true, "data":[66, "b", "KeyB"] },
+      "Escape":{"innerHTML":"#Players +-", "isKeyboard":true, "data":[80, "p", "KeyP"] }
+    },{
+      "Up":   { "isKeyboard":true, "data":[84, "t", "KeyT"] },
+      "Left": { "isKeyboard":true, "data":[70, "f", "KeyF"] },
+      "Down": { "isKeyboard":true, "data":[71, "g", "KeyG"] },
+      "Right":{ "isKeyboard":true, "data":[72, "h", "KeyH"] },
+      "a":    { "innerHTML":"Attack", "isKeyboard":true, "data":[82, "r", "KeyR"] },
+      "Start":{ "innerHTML":"Music", "isKeyboard":true, "data":[66, "b", "KeyB"] },
+      "Escape":{"innerHTML":"#Players +-", "isKeyboard":true, "data":[80, "p", "KeyP"] }
+    }
+  ]
+}
+}

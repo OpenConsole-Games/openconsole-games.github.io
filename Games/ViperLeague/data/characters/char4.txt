@@ -1,6 +1,0 @@
-Name = Kaa
-Portrait = characters/earth-dragon.jpg
-HeadImage = snake-earth.png
-HeadColor = 152,163,73
-TrailImages = trail-earth1.png,trail-earth2.png,trail-earth2.png,trail-earth3.png,trail-earth4.png
-Font = quicksand-20-earth.txt

@@ -15,5 +15,5 @@
 "aspect": "0",
 "relLocation": "TwoBall3D.json",
 "loadUnityGame": true,
-"controllerLocation": "https://openconsole.github.io/Controllers/two_button/two_button.html"
+"controllerLocation": "https://openconsole.github.io/openconsole/controllers/two_button/two_button.html"
 }

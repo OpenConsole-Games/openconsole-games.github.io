@@ -1,8 +1,0 @@
-A game object json:
-{ "name":"*Name of game, start with _ to make hidden*", 
-  "relLocation":"*Relative location of the game-settings json to this file*",
-  "minPayers":*OPTIONAL. How many players to show on game select.*",
-  "maxPlayers":"*OPTIONAL. How many players to show on game select.*",
-  "gamePic":"*OPTIONAL. Absolute location of game image to show.*",
-  "highlightPic":"*OPTIONAL. Pic/Gif to show when game highlighted.*"
-}

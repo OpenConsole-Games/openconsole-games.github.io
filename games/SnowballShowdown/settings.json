@@ -1,0 +1,15 @@
+{
+"game":   { "relLoc": "index.html", "type":"cached" },
+"canvas": { "aspect": "1", "id": "canvas" },
+"ctrl":   { "loc": "https://openconsole.github.io/openconsole/controllers/two_button/two_button.html" },
+"controls": {
+  "maxPlayers": 2,
+  "keymap": [
+    {
+      "b":    { "innerHTML":"Button", "isKeyboard":true, "data":[16, "Shift", "ShiftLeft"] }
+    },{
+      "b":    { "innerHTML":"Button", "isKeyboard":true, "data":[77, "m", "KeyM"] }
+    }
+  ]
+}
+}

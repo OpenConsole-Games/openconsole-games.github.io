@@ -13,5 +13,5 @@
 "relLocation": "index.html",
 "loadUnityGame": false,
 "canvasID": "game_canvas",
-"controllerLocation": "https://openconsole.github.io/Controllers/two_button/two_button.html"
+"controllerLocation": "https://openconsole.github.io/openconsole/controllers/two_button/two_button.html"
 }

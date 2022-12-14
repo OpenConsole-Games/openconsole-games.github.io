@@ -1,0 +1,6 @@
+Name = Nagini
+Portrait = characters/fire-dragon.jpg
+HeadImage = snake-fire.png
+HeadColor =224,62,22
+TrailImages = trail-fire1.png,trail-fire1.png,trail-fire2.png,trail-fire3.png,trail-fire3.png
+Font = quicksand-20-fire.txt

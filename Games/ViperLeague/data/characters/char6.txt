@@ -1,6 +1,0 @@
-Name = Coily
-Portrait = characters/water-dragon.jpg
-HeadImage = snake-water.png
-HeadColor = 93,116,167
-TrailImages = trail-water1.png,trail-water2.png,trail-water3.png,trail-water4.png,trail-water5.png
-Font = quicksand-20-water.txt

@@ -42,5 +42,5 @@
 "aspect": 0,
 "relLocation": ".json",
 "loadUnityGame": true,
-"controllerLocation": "https://openconsole.github.io/Controllers/one_joystick/one_joystick.html"
+"controllerLocation": "https://openconsole.github.io/openconsole/controllers/one_joystick/one_joystick.html"
 }

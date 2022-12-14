@@ -1,0 +1,27 @@
+{
+"game":   { "absLoc": "https://v6p9d9t4.ssl.hwcdn.net/html/1696613/buildhtml/Build/buildhtml.json", "type":"unity" },
+"canvas": { "aspect": "1.77777777778" },
+"ctrl":   { "loc": "https://openconsole.github.io/openconsole/controllers/two_button/two_button.html" },
+"controls": {
+  "maxPlayers": 2,
+  "keymap": [
+    {
+      "a":    { "innerHTML":"1", "isKeyboard":true, "data":[49, "1", "Digit1"] },
+      "b":    { "innerHTML":"2", "isKeyboard":true, "data":[50, "2", "Digit2"] },
+      "c":    { "innerHTML":"3", "isKeyboard":true, "data":[51, "3", "Digit3"] },
+      "d":    { "innerHTML":"4", "isKeyboard":true, "data":[52, "4", "Digit4"] },
+      "e":    { "innerHTML":"5", "isKeyboard":true, "data":[53, "5", "Digit5"] },
+      "Start":{ "innerHTML":"Play vs COM", "isKeyboard":false, "data":["0.5", "0.4", "0"] },
+      "Escape":{ "innerHTML":"Back", "isKeyboard":false, "data":["0.2", "0.45", "0"] }
+    },{
+      "a":    { "innerHTML":"1", "isKeyboard":true, "data":[71, "g", "KeyG"] },
+      "b":    { "innerHTML":"2", "isKeyboard":true, "data":[72, "h", "KeyH"] },
+      "c":    { "innerHTML":"3", "isKeyboard":true, "data":[74, "j", "KeyJ"] },
+      "d":    { "innerHTML":"4", "isKeyboard":true, "data":[75, "k", "KeyK"] },
+      "e":    { "innerHTML":"5", "isKeyboard":true, "data":[76, "l", "KeyL"] },
+      "Start":{ "innerHTML":"Play 2P", "isKeyboard":false, "data":["0.5", "0.52", "0"] },
+      "Escape":{ "innerHTML":"Restart", "isKeyboard":false, "data":["0.8", "0.45", "0"] }
+    }
+  ]
+}
+}

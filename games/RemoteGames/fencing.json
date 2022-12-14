@@ -1,0 +1,11 @@
+{
+"game":{"type":"remote","relLoc":null,"absLoc":"https://v6p9d9t4.ssl.hwcdn.net/html/1093757/fencing/index.html?v=1542782612"},
+"canvas":{"aspect":"1","id":"canvas"},"ctrl":{"loc":"https://openconsole.github.io/openconsole/controllers/one_joystick/one_joystick.html"},
+"controls":{
+  "keymap":[
+    {"Up":{"isKeyboard":true,"data":[77,"m","KeyM"]},"Left":{"isKeyboard":true,"data":[37,"ArrowLeft","ArrowLeft"]},"Down":{"isKeyboard":true,"data":[40,"ArrowDown","ArrowDown"]},"Right":{"isKeyboard":true,"data":[39,"ArrowRight","ArrowRight"]},"a":{"innerHTML":"Stab","isKeyboard":true,"data":[78,"n","KeyN"]},"Start":{"innerHTML":"Start","isKeyboard":true,"data":[88,"x","KeyX"]}},
+    {"Up":{"isKeyboard":true,"data":[65,"a","KeyA"]},"Left":{"isKeyboard":true,"data":[83,"s","KeyS"]},"Down":{"isKeyboard":true,"data":[68,"d","KeyD"]},"Right":{"isKeyboard":true,"data":[70,"f","KeyF"]},"a":{"innerHTML":"Stab","isKeyboard":true,"data":[16,"Shift","ShiftLeft"]}}
+  ],
+  "maxPlayers":2
+}
+}
