@@ -16,7 +16,7 @@ function GameLoad() {
   //this.gameLocation = "https://openconsole-games.github.io/games/CrystalControl/index.html";
   //this.gameLocation = getQueryVariable("loc");//"https://v6p9d9t4.ssl.hwcdn.net/html/844189/titonic web/index.html";
   //this.gameLocation = "https://v6p9d9t4.ssl.hwcdn.net/html/989148/index.html"
-  this.corsProxy = "https://cors-anywhere.herokuapp.com/";
+  this.corsProxy = "https://oc-cors-anywhere.fly.dev/";
   // this.corsProxy = "https://cors-proxy-oc.glitch.me/";
   
   this.requiredBeforeLoading = [];
